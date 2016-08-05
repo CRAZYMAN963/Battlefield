@@ -1,0 +1,246 @@
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.0.0"}*//{}
+
+@font-face {
+    font-family: 'Purista';
+    src: url('https://dl.dropboxusercontent.com/u/9889565/BetterDiscord/battlefield/PuristaMedium.woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Purista';
+    src: url('https://dl.dropboxusercontent.com/u/9889565/BetterDiscord/battlefield/PuristaSemibold.woff');
+    font-weight: 600;
+}
+:root{
+    --black:#000000;
+    --white:#FFFFFF;
+    --orange:#FF9900;
+
+    /* RGBA */
+    --a-black-dark:rgba(7, 7, 7, 0.8);
+    --a-black-light:rgba(7, 7, 7, 0.5);
+    --a-white-light:rgba(255, 255, 255, 0.1);
+}
+
+body{
+    font-family: Arial,sans-serif;
+}
+
+.app{
+    background: url(https://i.imgur.com/lvIR30n.jpg);
+    background-size: cover;
+}
+.chat .content{
+    background: transparent;
+}
+
+/* ANIMATION */
+@keyframes channel-pulse{
+  0%{
+    background: transparent;
+  }
+  50%{
+    background: var(--orange);
+  }
+  100%{
+    background: transparent;
+  }
+}
+
+/* TITLE BAR */
+.chat>.title-wrap{
+    background: var(--a-black-dark);
+    box-shadow: none;
+    border-bottom: none;
+    margin-bottom: 1px;
+    min-height: 50px;
+}
+.chat>.title-wrap>.title{
+    font-family: Purista, sans-serif;
+    font-size: 18px;
+    letter-spacing: normal;
+}
+.chat>.title-wrap>.title .channel-name:before{
+    display: none;
+}
+.chat>.title-wrap>.topic{
+    color: var(--white);
+    font-weight: normal;
+    padding-left: 0;
+}
+.chat>.title-wrap>.topic:before{
+    display: none;
+}
+.chat>.title-wrap>.title .channel-name{
+    color: var(--white) !important;
+}
+.guild-header header{
+    background-color:var(--a-black-dark);
+    box-shadow: none;
+    height: 50px;
+    padding: 0 20px;
+    font-family: Purista, sans-serif;
+}
+.guild-header ul{
+    top: 15px;
+    background: var( --a-black-dark);
+}
+.guild-header.guild-header-open ul{
+    margin-top: 35px;
+}
+.channels-wrap .scroller-wrap{
+    background:var(--a-black-light);
+    margin-top: 1px;
+}
+/* CHANNELS */
+.channels-wrap{
+    background: transparent;
+    margin-right: 1px;
+}
+.guild-channels{
+    background: none;
+}
+.account{
+    background: url(https://i.imgur.com/x9mXoFj.png);
+    border-top: none;
+    margin-top: 1px;
+}
+.account .btn-group{
+    border: 0;
+    border-radius: 0;
+}
+.account .btn{
+    background:var(--a-black-light);
+    border-radius: 0;
+    box-shadow: none;
+}
+.account .btn-deafen,
+.account .btn-mute{
+    border-right: 0;
+    margin-right: 1px;
+}
+.guild-channels .channel-text.selected,
+.guild-channels .channel-text:hover{
+    background:var(--a-white-light);
+}
+.guild-channels .channel-text.selected:before,
+.guild-channels .channel-text:hover.channel-muted:before,
+.guild-channels .channel-text:hover:not(.unread):before{
+    border-color: var(--orange);
+}
+.guild-channels .channel-text.unread:not(.selected):not(.channel-muted){
+  animation: channel-pulse 1.5s ease-in-out;
+}
+.guild-channels .channel-text .channel-name:before{
+    display: none;
+}
+
+/* SERVERS */
+.guilds-wrapper{
+    background: var(--a-black-light);
+    margin-right: 1px;
+}
+
+/* CHAT */
+.chat .messages{
+    background: var(--a-black-light);
+    margin-right: 1px;
+}
+.message-group{
+    border-bottom: 1px solid var(--a-black-dark);
+}
+.message-group.compact .message .markup .user-name{
+    font-family: Purista, sans-serif;
+}
+.message-group .comment .markup{
+    color: var(--white);
+}
+.highlight{
+    background:none;
+    color: var(--orange)
+}
+.highlight:hover{
+    background:none;
+    color: var(--white);
+}
+.embed{
+    border-left: 2px solid var(--orange);
+}
+.chat .divider.divider-red>div:last-of-type,
+.chat .divider>div:last-of-type{
+    display: none;
+}
+.chat .divider.divider-red>div{
+    background:var(--orange);
+    opacity: 1;
+}
+.chat .divider.divider-red>span{
+    color: var(--orange);
+    background: transparent;
+    border-left:1px solid var(--orange);
+    font-family: Purista, sans-serif;
+}
+.chat .divider>span{
+    color: var(--white);
+    background: transparent;
+    border-left:1px solid var(--white);
+    font-family: Purista, sans-serif;
+}
+img.emote{
+    margin: -14px 0;
+}
+.channel-textarea-upload,
+.channel-textarea-upload:hover,
+.channel-textarea-upload:active{
+    border-right: 0;
+}
+.chat form{
+    background: var(--a-black-light);
+    margin: 1px 1px 0 0;
+}
+.channel-textarea{
+    margin: 0;
+    min-height: 70px;
+}
+.channel-textarea-inner{
+    background:none;
+    border: 0;
+    border-radius: 0;
+}
+.channel-textarea-inner textarea{
+    color: var(--white);
+    background: transparent;
+}
+.typing{
+    background:none;
+    color: var(--white);
+    padding-left: 10px;
+}
+.typing strong{
+    font-weight: normal;
+}
+.typing .ellipsis{
+    display: none;
+}
+
+/* MEMBERS */
+.channel-members{
+    background-color: var(--a-black-light);
+}
+
+/* SCROLLBAR */
+.scroller-wrap .scroller::-webkit-scrollbar{
+    width: 5px;
+}
+.scroller-wrap .scroller::-webkit-scrollbar-thumb{
+    background: var(--white);
+    -webkit-transition: background ease-in 1s;
+    border: 0;
+}
+.scroller-wrap .scroller::-webkit-scrollbar-thumb:hover{
+    background: var(--orange);
+    -webkit-transition: background ease-in 1s;
+}
+.scroller-wrap .scroller::-webkit-scrollbar-track-piece{
+    background: none;
+    border: 0;
+}
