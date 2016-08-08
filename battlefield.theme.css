@@ -1,4 +1,6 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.0.0"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.4.0"}*//{}
+
+@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/dev.css);
 
 @font-face {
     font-family: 'Purista';
@@ -10,15 +12,18 @@
     src: url('https://dl.dropboxusercontent.com/u/9889565/BetterDiscord/battlefield/PuristaSemibold.woff');
     font-weight: 600;
 }
+
 :root{
     --black:#000000;
     --white:#FFFFFF;
     --orange:#FF9900;
+    --green:#57B06D;
 
     /* RGBA */
     --a-black-dark:rgba(7, 7, 7, 0.8);
     --a-black-light:rgba(7, 7, 7, 0.5);
-    --a-white-light:rgba(255, 255, 255, 0.1);
+    --a-white-dark:rgba(255, 255, 255, 0.1);
+    --a-white-light:rgba(255, 255, 255, 0.8);
 }
 
 body{
@@ -34,16 +39,19 @@ body{
 }
 
 /* ANIMATION */
-@keyframes channel-pulse{
-  0%{
-    background: transparent;
-  }
-  50%{
-    background: var(--orange);
-  }
-  100%{
-    background: transparent;
-  }
+@keyframes channel-pulse{                                                       /* Channel notifier */
+  0%{ background: transparent; }
+  50%{ background: var(--orange); }
+  100%{ background: transparent; }
+}
+@keyframes typewriter{                                                          /* Typing animation */
+    0%{ width: 0%; }
+    100%{ width: 100%; }
+}
+@keyframes typewriter-cursor{                                                   /* Blinking cursor next to typing animation */
+    0%{ background: transparent; }
+    50%{ background: var(--a-white-dark); }
+    100%{ background: transparent; }
 }
 
 /* TITLE BAR */
@@ -59,32 +67,32 @@ body{
     font-size: 18px;
     letter-spacing: normal;
 }
-.chat>.title-wrap>.title .channel-name:before{
+.chat>.title-wrap>.title .channel-name:before{                                  /* Remove hashtag next to channel name */
     display: none;
 }
-.chat>.title-wrap>.topic{
+.chat>.title-wrap>.topic{                                                       /* Channel topic */
     color: var(--white);
     font-weight: normal;
     padding-left: 0;
 }
-.chat>.title-wrap>.topic:before{
+.chat>.title-wrap>.topic:before{                                                /* Remove divider line next to channel name */
     display: none;
 }
-.chat>.title-wrap>.title .channel-name{
+.chat>.title-wrap>.title .channel-name{                                         /* Channel name (next to topic) */
     color: var(--white) !important;
 }
-.guild-header header{
+.guild-header header{                                                           /* Server header */
     background-color:var(--a-black-dark);
     box-shadow: none;
     height: 50px;
     padding: 0 20px;
     font-family: Purista, sans-serif;
 }
-.guild-header ul{
+.guild-header ul{                                                               /* Server header dropdown menu */
     top: 15px;
     background: var( --a-black-dark);
 }
-.guild-header.guild-header-open ul{
+.guild-header.guild-header-open ul{                                             /* Server header downdown menu when opened */
     margin-top: 35px;
 }
 .channels-wrap .scroller-wrap{
@@ -96,65 +104,120 @@ body{
     background: transparent;
     margin-right: 1px;
 }
-.guild-channels{
+.guild-channels{                                                                /* Channels pane */
     background: none;
 }
-.account{
-    background: url(https://i.imgur.com/x9mXoFj.png);
-    border-top: none;
-    margin-top: 1px;
+.guild-channels .channel-text.selected,
+.guild-channels .channel-text:hover{                                            /* Channel hover */
+    background:var(--a-white-dark);
 }
-.account .btn-group{
+.guild-channels .channel-text.selected:before,
+.guild-channels .channel-text:hover.channel-muted:before,
+.guild-channels .channel-text:hover:not(.unread):before{                        /* Left border on selected channel */
+    border-color: var(--orange);
+}
+.guild-channels .channel-text.unread:not(.selected):not(.channel-muted){        /* Pulse channel once when a message is received */
+  animation: channel-pulse 1.5s ease-in-out;
+}
+.guild-channels .channel-text .channel-name:before{                             /* Remove channel hashtags */
+    display: none;
+}
+
+/* ACCOUNT */
+.account{                                                                       /* Account box */
+    background: url(https://i.imgur.com/x9mXoFj.png);
+    background-position-y: -13px;
+    background-repeat: no-repeat;
+    border-top: 0;
+    margin-top: 1px;
+    height: 45px;
+}
+.account .btn-group{                                                            /* Mute/Deafen/Settings buttons */
     border: 0;
     border-radius: 0;
 }
-.account .btn{
-    background:var(--a-black-light);
+.account .btn{                                                                  /* Mute/Deafen/Settings buttons */
+    background: var(--a-black-light);
     border-radius: 0;
     box-shadow: none;
 }
 .account .btn-deafen,
-.account .btn-mute{
+.account .btn-mute{                                                             /* Mute and deafen buttons */
     border-right: 0;
     margin-right: 1px;
 }
-.guild-channels .channel-text.selected,
-.guild-channels .channel-text:hover{
-    background:var(--a-white-light);
+.account .btn-group .btn:hover{
+    background: var(--a-black-dark);
 }
-.guild-channels .channel-text.selected:before,
-.guild-channels .channel-text:hover.channel-muted:before,
-.guild-channels .channel-text:hover:not(.unread):before{
-    border-color: var(--orange);
+
+/* VOICE CONNECTION */
+#voice-connection{                                                              /* Voice connection box */
+    background: url(https://i.imgur.com/6doJ1rr.png);
+    border-top: none;
+    margin-top: 1px;
 }
-.guild-channels .channel-text.unread:not(.selected):not(.channel-muted){
-  animation: channel-pulse 1.5s ease-in-out;
+#voice-connection .voice-connection-status-connecting,                          /* Connecting */
+#voice-connection .voice-connection-status-error,                               /* Error */
+#voice-connection .voice-connection-status-connected{                           /* Connected */
+    font-family: Purista, sans-serif;
 }
-.guild-channels .channel-text .channel-name:before{
-    display: none;
+#voice-connection .voice-connection-channel{                                    /* Current channel */
+    opacity: 1;
+}
+#voice-connection .btn-group{                                                   /* Connection info/Disconnect buttons */
+    border:0;
+    border-radius: 0;
+}
+#voice-connection .btn-info,                                                    /* Connection info button */
+#voice-connection .btn-disconnect{                                              /* Disconnect button */
+    border:0;
+    background: var(--a-black-light);
+    box-shadow: none;
+}
+#voice-connection .btn-group .btn:hover{
+    background: var(--a-black-dark);
 }
 
 /* SERVERS */
-.guilds-wrapper{
+.guilds-wrapper{                                                                /* Servers list */
     background: var(--a-black-light);
     margin-right: 1px;
+}
+.guilds-wrapper .guilds-add{                                                    /* Add button */
+    background: transparent;
+    border-radius: 0;
+}
+.guilds-wrapper .guilds-add:hover{                                              /* Add button hover */
+    background: transparent;
+    border-color: var(--orange);
+    color: var(--orange);
+}
+.guilds-wrapper .guilds .guild .guild-inner{                                    /* Server icon */
+    background: var(--a-black-light) !important;
+    border-radius: 0 !important;
+}
+.guilds-wrapper .guilds .guild.selected{                                        /* Selected server */
+    background: var(--orange);
 }
 
 /* CHAT */
-.chat .messages{
+.chat .messages{                                                                /* Chat */
     background: var(--a-black-light);
-    margin-right: 1px;
 }
-.message-group{
+.message-group{                                                                 /* Message */
     border-bottom: 1px solid var(--a-black-dark);
 }
-.message-group.compact .message .markup .user-name{
+.message-group.compact .message .markup .user-name{                             /* Username next to message */
     font-family: Purista, sans-serif;
+    color: #CCC;
+    font-size: 13px;
+    font-weight: bold;
 }
-.message-group .comment .markup{
+.message-group .comment .markup{                                                /* Message text */
     color: var(--white);
+    font-size: 13px;
 }
-.highlight{
+.highlight{                                                                     /* @mention and #channel mentions */
     background:none;
     color: var(--orange)
 }
@@ -162,38 +225,51 @@ body{
     background:none;
     color: var(--white);
 }
-.embed{
+.embed{                                                                         /* Embeds */
     border-left: 2px solid var(--orange);
 }
-.chat .divider.divider-red>div:last-of-type,
-.chat .divider>div:last-of-type{
+.message-group .comment .markup code.inline{                                    /* Inline code */
+    background: var(--a-black-light);
+    border: 0;
+    border-radius: 0;
+}
+.message-group .comment .markup pre code,
+.message-group .comment .markup pre{                                            /* Code block */
+    background: var(--a-black-light);
+    border: 0;
+    border-radius: 0;
+}
+.chat .divider.divider-red>div:last-of-type,                                    /* New messages right divider */
+.chat .divider>div:last-of-type{                                                /* New day right divider */
     display: none;
 }
-.chat .divider.divider-red>div{
+.chat .divider.divider-red>div{                                                 /* New messages divider line */
     background:var(--orange);
     opacity: 1;
 }
-.chat .divider.divider-red>span{
+.chat .divider.divider-red>span{                                                /* New messages divider text */
     color: var(--orange);
     background: transparent;
     border-left:1px solid var(--orange);
     font-family: Purista, sans-serif;
 }
-.chat .divider>span{
+.chat .divider>span{                                                            /* New day divider text */
     color: var(--white);
     background: transparent;
     border-left:1px solid var(--white);
     font-family: Purista, sans-serif;
 }
-img.emote{
+img.emote{                                                                      /* Twitch/BTTV/FFz emotes */
     margin: -14px 0;
 }
+
+/* CHAT BOX */
 .channel-textarea-upload,
 .channel-textarea-upload:hover,
-.channel-textarea-upload:active{
+.channel-textarea-upload:active{                                                /* Upload button next to chat box */
     border-right: 0;
 }
-.chat form{
+.chat form{                                                                     /* Contains text area, emoji button etc */
     background: var(--a-black-light);
     margin: 1px 1px 0 0;
 }
@@ -206,41 +282,494 @@ img.emote{
     border: 0;
     border-radius: 0;
 }
-.channel-textarea-inner textarea{
+.channel-textarea-inner textarea{                                               /* The bit you write in */
     color: var(--white);
     background: transparent;
+    margin-bottom: 25px;
 }
-.typing{
+.typing{                                                                        /* 'X is typing' */
     background:none;
     color: var(--white);
     padding-left: 10px;
+    animation: typewriter 3s steps(50, end);
 }
-.typing strong{
+.typing:after{
+    content: "";
+    width: 10px;
+    height: 100%;
+    animation: typewriter-cursor 1s ease-in infinite;
+}
+.typing strong{                                                                 /* User names in 'X is typing' */
     font-weight: normal;
 }
-.typing .ellipsis{
+.typing .ellipsis{                                                              /* Hide animated dots when someone is typing */
     display: none;
 }
 
 /* MEMBERS */
-.channel-members{
+.channel-members-wrap{
+    margin-left: 1px;
+}
+.channel-members{                                                               /* Channel members list */
     background-color: var(--a-black-light);
+}
+.channel-members .member .member-username{                                      /* Usernames */
+    font-family: Purista, sans-serif;
 }
 
 /* SCROLLBAR */
-.scroller-wrap .scroller::-webkit-scrollbar{
+.scroller-wrap .scroller::-webkit-scrollbar{                                    /* Chat scrollbar */
     width: 5px;
 }
-.scroller-wrap .scroller::-webkit-scrollbar-thumb{
+.scroller-wrap .scroller::-webkit-scrollbar-thumb{                              /* Chat scrollbar thumb */
     background: var(--white);
     -webkit-transition: background ease-in 1s;
     border: 0;
 }
-.scroller-wrap .scroller::-webkit-scrollbar-thumb:hover{
+.scroller-wrap .scroller::-webkit-scrollbar-thumb:hover{                        /* Chat scrollbar thumb hover */
     background: var(--orange);
     -webkit-transition: background ease-in 1s;
 }
-.scroller-wrap .scroller::-webkit-scrollbar-track-piece{
+.scroller-wrap .scroller::-webkit-scrollbar-track-piece{                        /* Chat scrollbar track */
     background: none;
     border: 0;
+}
+
+/* SETTINGS MODAL */
+.callout-backdrop{                                                              /* Background behind modals */
+    background-image: url(https://i.imgur.com/lvIR30n.jpg);
+    background-size: cover;
+}
+.settings .settings-header{                                                     /* Sidebar */
+    background: var(--a-black-dark);
+    margin-right: 1px;
+    border-radius: 0;
+}
+.tab-bar.SIDE .tab-bar-item{
+    color: var(--white);
+}
+.tab-bar.SIDE .tab-bar-item:before{                                             /* Tab indicator */
+    border-left:none;
+}
+.tab-bar.SIDE .tab-bar-item.selected,                                           /* Tab selected */
+.tab-bar.SIDE .tab-bar-item:hover{                                              /* Tab hover */
+    color: var(--orange);
+}
+.change-log-button-container:before{                                            /* Tab list divider */
+    width: 100%;
+    left: 0;
+}
+.settings .settings-inner,
+.settings .settings-actions{                                                    /* Settings modal backgrounds */
+    background: var(--a-black-light);
+    border-radius: 0 !important;
+}
+.settings .settings-actions{                                                    /* Actions box */
+    border-top: none;
+    margin-top: 1px;
+}
+.tab-bar.SIDE .tab-bar-header{                                                  /* Modal header */
+    font-family: Purista, sans-serif;
+    box-shadow: none;
+}
+.user-settings-streamer-mode{                                                   /* Streamer mode has a background for whatever reason... */
+    background: none;
+}
+.tab-bar.TOP{                                                                   /* Top tabs */
+    border-bottom: 1px solid var(--a-white-light);
+}
+.tab-bar.TOP .tab-bar-item{                                                     /* Top tab item */
+    color: var(--white);
+    font-size: 13px;
+    font-weight: normal;
+}
+.tab-bar.TOP .tab-bar-item.selected{                                            /* Top tab selected item */
+    color: var(--orange);
+    border-bottom: 1px solid var(--orange);
+}
+.tab-bar.TOP .tab-bar-item:hover{
+    color: var(--orange);
+    border-bottom: 1px solid var(--orange);
+}
+.settings .settings-inner .settings-panel{
+    padding: 25px;
+}
+.settings-connections-wrapper .user-settings-modal-connections .user-settings-modal-connections-list .connection .connection-integrations.no-integrations{
+    color: var(--white);
+    font-weight: normal;
+    font-size: 13px;
+    text-transform: none;
+}
+.settings-connections-wrapper .user-settings-modal-connections .user-settings-modal-connections-list .connection .connection-integrations{
+    border: 0;
+    background: var(--a-black-light);
+}
+.settings-connections-wrapper .authed-app{                                      /* Auth'd app */
+    background: var(--a-black-light);
+    border: 0;
+    border-radius: 0;
+}
+.settings-connections-wrapper .authed-app .header .app-name{                    /* Auth'd app name */
+    color: var(--white);
+    font-weight: normal;
+}
+.user-settings-modal .account-warning{                                          /* Keybinds warning */
+    background: none;
+    border: 1px solid var(--orange);
+    border-radius: 0;
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: normal;
+}
+#overlay-explanation{                                                           /* Overlays warning */
+    background: none;
+    border: 1px solid var(--orange);
+    border-radius: 0;
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: normal;
+}
+#overlay-explanation a{
+    font-weight: normal;
+}
+.user-settings-modal-games{                                                     /* Table of games */
+    background: none;
+}
+.user-settings-modal-games .games-table .games-row .item-game .game{            /* Game name */
+    font-size: 13px;
+    font-weight: normal;
+    color: var(--white);
+}
+.user-settings-modal-games .games-table .games-row .item-game .last-played{
+    color: var(--a-white-light);
+    font-weight: normal;
+}
+.user-settings-modal-games .games-table .games-row .item-game .game-input{
+    font-size: 13px;
+    font-weight: normal;
+    color: var(--white);
+}
+
+.form .control-group label{                                                     /* Group header */
+    color: var(--white);
+    font-family: Purista, sans-serif;
+}
+.form .control-group input{
+    line-height: 13px;
+    padding: 8px;
+    background: none;
+    color: var(--white) !important;
+    margin-bottom: 0 !important;
+    font-size: 13px !important;
+    background: var(--a-black-light);
+}
+.form .control-group input[type=email],
+.form .control-group input[type=number],
+.form .control-group input[type=password],
+.form .control-group input[type=text]{
+    border: 1px solid var(--white);
+}
+.form .control-group input[type=email]:focus,
+.form .control-group input[type=number]:focus,
+.form .control-group input[type=password]:focus,
+.form .control-group input[type=text]:focus{
+    border: 1px solid var(--orange);
+}
+.slider-bar{                                                                    /* Volume sliders */
+    background: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 0;
+}
+.slider-bar-fill{                                                               /* Volume slider fill level */
+    background: var(--black);
+}
+.slider-handle{                                                                 /* Volume slider handle */
+    border: none;
+    border-radius: 0;
+    width: 6px;
+    height: 20px;
+    top: -4px;
+    margin-left: 0;
+}
+.checkbox .checkbox-inner{                                                      /* Checkbox size */
+    width: 16px;
+    height: 16px;
+}
+.checkbox .checkbox-inner span{                                                 /* Checkbox border */
+    border:1px solid var(--white);
+    border-radius: 0;
+}
+.checkbox .checkbox-inner input[type=checkbox]:checked+span{                    /* Checked background */
+    background: none;
+    border: 1px solid var(--green);
+}
+.checkbox .checkbox-inner input[type=checkbox]:checked+span:after{
+    border-color: var(--green);
+}
+.checkbox .checkbox-inner+span{                                                 /* Checkbox label */
+    font-size: 13px;
+    color: var(--white);
+}
+.radio .radio-inner{                                                            /* Radio button */
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--green);
+    border-radius: 50%;
+    background: none;
+}
+.radio .radio-inner span,
+.radio .radio-inner span:after{                                                 /* Radio indicator size */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.radio .radio-inner span{                                                       /* Radio indicator pos */
+    top: 0;
+    left: 0;
+}
+.radio .radio-inner span:after{                                                 /* Radio indicator */
+    background: var(--green);
+}
+.form .radio-group .radio{                                                      /* Radio label */
+    font-size: 13px;
+    color: var(--white);
+}
+.form .btn{
+    font-weight: normal;
+    text-transform: uppercase;
+    height: 32px;
+    padding: 0 25px;
+    line-height: 30px;
+}
+.form .btn-primary{                                                             /* Done button */
+    background: var(--a-black-light);
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    border-radius: 0;
+}
+.form .btn-primary:hover{
+    background: var(--a-black-dark);
+    text-shadow: 0 0 0.5em var(--orange);
+}
+.user-settings-modal-keybinds .user-settings-modal-keybinds-header .btn-add-keybind{ /* Add keybind button */
+    background: var(--a-black-light);
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+.user-settings-modal-keybinds .user-settings-modal-keybinds-header .btn-add-keybind:hover{
+    background: var(--a-black-dark);
+    text-shadow: 0 0 0.5em var(--white);
+}
+.user-settings-security .btn-ghost{
+    background: var(--a-black-light);
+    color: var(--white);
+    border: 1px solid var(--white);
+    border-radius: 0;
+}
+.user-settings-security .btn-ghost:hover{
+    background: var(--a-black-dark);
+    text-shadow: 0 0 0.5em var(--white);
+}
+div.control-group .shortcut-recorder input[type=text]{
+    border: 1px solid var(--white);
+    border-radius: 0;
+    text-shadow: none;
+    font-weight: normal;
+    line-height: 32px;
+}
+
+
+.form .Select-control *{
+    font-family: arial, sans-serif;
+    font-size: 13px;
+}
+.form .Select-control{
+    height: 32px;
+}
+.Select-control{
+    background: var(--a-black-light);
+    border: 1px solid var(--white);
+    border-radius: 0;
+}
+.Select-control .Select-placeholder{
+    padding: 0 5px;
+}
+.form .has-value .Select-placeholder{
+    color: var(--white);
+}
+.Select-menu-outer{
+    background: var(--a-black-light);
+    border: 1px solid var(--white);
+    border-radius: 0;
+    box-shadow: none;
+}
+.form .Select-option{
+    color: var(--white);
+    padding:5px;
+    font-size: 13px;
+}
+.form .Select-option.is-focused{
+    background: var(--a-black-dark);
+    color: var(--white);
+}
+.is-open>.Select-control{
+    background: var(--a-black-light);
+}
+
+/* REMOVE ART */
+.messages-popout .empty-placeholder,                                            /* Hide no pinned messages art */
+.user-settings-streamer-mode .user-settings-streamer-mode-image,                /* Hide streaming art */
+.messages-popout .empty-placeholder.bottom{                                     /* Hide no recent messages art */
+    display: none;
+}
+.user-settings-security.show-art{                                               /* Hide 2FA art */
+    background: none;
+}
+
+/* BETTER DISCORD SETTINGS */
+.bd-settings{
+    max-width: 555px;
+}
+.bda-slist li{                                                                  /* List of Plugins/Themes */
+    background: var(--a-black-light) !important;
+    border: 0;
+    margin-bottom: 1px;
+    min-height: 70px;
+}
+.bda-slist li:nth-child(odd){
+    background: none;
+    border: 0;
+}
+.bda-slist .bda-name{                                                           /* Name of Plugin/Theme */
+    font-family: Purista, sans-serif;
+    color: var(--white);
+}
+.bda-slist .bda-description{                                                    /* Description of plugin/theme */
+    border-top: 1px solid var(--a-white-dark);
+    color: var(--white);
+    font-size: 13px;
+    min-height: 70px;
+}
+.bda-slist .checkbox:before{                                                    /* Enabled checkbox label */
+    font-family: Purista, sans-serif;
+    color: var(--white)
+}
+.bda-slist .bda-right .bda-plugin-reload{                                       /* Hide the reload button, since it doesn't work */
+    display: none;
+}
+.bd-settings .bd-pane .bda-slist-top{                                           /* Move Get/Open folder into the tab bar */
+    margin-top: -50px;
+    padding-bottom: 10px;
+}
+.bda-slist-top .btn{                                                            /* Import/Export buttons */
+  padding: 0 5px;
+  height: 20px;
+  line-height: 20px;
+}
+.bda-slist .bda-right .btn{
+    padding:0 10px;
+}
+.bda-slist .bda-right button[disabled]{                                         /* Hide settings buttons if disabled */
+    display: none;
+}
+#bd-customcss-attach-controls{                                                  /* Custom CSS controls */
+    background: none;
+    border: 0;
+    box-shadow: none;
+}
+#bd-customcss-attach-controls button{                                           /* Custom CSS control buttons */
+    width: auto;
+}
+#editor-detached h3{                                                            /* "Editor Detatched" */
+    font-size: 13px;
+    color: var(--white);
+}
+#editor-detached .btn{                                                          /* Attach editor button */
+    margin-left: -58px;
+    width: 115px;
+    height: 32px;
+}
+#bd-customcss-detach-container{                                                 /* Detatched editor container */
+    padding-top: 50px;
+    background: var(--black);
+}
+#bd-customcss-detach-controls{                                                  /* Custom CSS detatched controls */
+    background: var(--a-black-dark);
+}
+div[style*="background:#2E3136"]{                                               /* BetterDiscord footer */
+    background: var(--a-black-light) !important;
+    color: var(--white) !important;
+    font-size: 13px !important;
+    height: 20px !important;
+}
+div[style*="background:#2E3136"]>span{
+    line-height: 21px !important;
+}
+#bd-changelog{
+    font-weight: normal;
+}
+
+/* MONOKAI THEME FOR CSS EDITOR IN BETTERDISCORD SETTINGS */
+/* Nicked from https://github.com/codemirror/CodeMirror/blob/master/theme/monokai.css */
+/* Based on Sublime Text's Monokai theme */
+.CodeMirror{background: #272822 !important;  color: #f8f8f2; }
+div.CodeMirror-selected { background: #49483E; }
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: rgba(73, 72, 62, .99); }
+.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: rgba(73, 72, 62, .99); }
+.CodeMirror-gutters { background: #272822; border-right: 0px; }
+.CodeMirror-guttermarker { color: white; }
+.CodeMirror-guttermarker-subtle { color: #d0d0d0; }
+.CodeMirror-linenumber { color: #d0d0d0; }
+.CodeMirror-cursor { border-left: 1px solid #f8f8f0; }
+span.cm-comment { color: #75715e; }
+span.cm-atom { color: #ae81ff; }
+span.cm-number { color: #ae81ff; }
+span.cm-property, span.cm-attribute { color: #a6e22e; }
+span.cm-keyword { color: #f92672; }
+span.cm-builtin { color: #66d9ef; }
+span.cm-string { color: #e6db74; }
+span.cm-variable { color: #f8f8f2 !important; }
+span.cm-variable-2 { color: #9effff; }
+span.cm-variable-3 { color: #66d9ef; }
+span.cm-def { color: #fd971f; }
+span.cm-bracket { color: #f8f8f2; }
+span.cm-tag { color: #f92672; }
+span.cm-header { color: #ae81ff; }
+span.cm-link { color: #ae81ff; }
+span.cm-error { background: #f92672; color: #f8f8f0; }
+.CodeMirror-activeline-background { background: #373831; }
+.CodeMirror-matchingbracket { text-decoration: underline; color: white !important;}
+
+/* PLUGIN SUPPORT */
+
+/* EVEN BETTER REPO */
+#ebr-themes-pane .ebr-top .themes-header,
+#ebr-plugins-pane .ebr-top .plugins-header{                                     /* Hide header */
+    display: none;
+}
+#theme-search,
+#plugin-search{                                                                 /* Search box */
+    background: var(--a-black-light);
+    border: 1px solid var(--white);
+    color: var(--white);
+    font-size: 13px;
+}
+#theme-search:focus,
+#plugin-search:focus{
+    border: 1px solid var(--orange);
+}
+.ebr-plugin-item,
+.ebr-theme-item{                                                                /* Item box */
+    background: var(--a-black-light) !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+.ebr-themes p.name,
+.ebr-plugins p.name,                                                            /* Item name */
+.ebr-themes p.author,
+.ebr-plugins p.author,                                                          /* Item author */
+.ebr-themes p.description,
+.ebr-plugins p.description{                                                     /* Item description */
+    color: var(--white);
+    font-size: 13px;
 }
