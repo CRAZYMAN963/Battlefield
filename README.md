@@ -1,6 +1,6 @@
 # Battlefield
 A custom theme for Discord (BetterDiscord).  
-Currently: `v1.4.0`
+Currently: `v1.5.0`
 
 # Installation
 [Download](https://raw.githubusercontent.com/TakosThings/battlefield/master/battlefield.theme.css)  
@@ -8,4 +8,4 @@ Follow [this guide](https://0mniscient.github.io/BetterDiscord/install_theme.htm
 You'll also need to go to Appearance settings and choose the light theme.
 
 # Preview
-![Preview](https://i.imgur.com/o01kjIl.jpg)
+![Preview](https://i.imgur.com/CxQGQOw.png)
