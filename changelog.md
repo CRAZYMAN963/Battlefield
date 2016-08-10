@@ -27,3 +27,10 @@
 * Fix: Upload button flowing into the typing indicators
 * Fix: Black text in voice debug
 * Fix: Save diagnostics button in voice debug
+
+#### 1.6.0
+* Account box avatar
+* Members list
+* Update: README screenshot
+* Update: README Install guide link
+* Fix: Friends button didn't indicate it was selected

@@ -1,6 +1,6 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.5.0"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.6.0"}*//{}
 
-@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.5.0.css);
+@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.6.0.css);
 
 @font-face {
     font-family: 'Purista';
@@ -127,6 +127,9 @@ body{
 .guild-channels{                                                                /* Channels pane */
     background: none;
 }
+.guild-channels header{
+	display: none;
+}
 .guild-channels .channel-text.selected,
 .guild-channels .channel-text:hover{                                            /* Channel hover */
     background:var(--a-white-dark);
@@ -141,6 +144,24 @@ body{
 }
 .guild-channels .channel-text .channel-name:before{                             /* Remove channel hashtags */
     display: none;
+}
+.guild:first-of-type:not(.guilds-add){                                          /* Select friends button, not add button */
+    height: 50px;
+    width: 80px;
+    padding-left: 15px;
+    margin-top: -18px;
+    margin-left: -15px;
+    border-bottom: 1px solid var(--a-white-dark);
+}
+.guild.active:first-of-type{                                                    /* Friends active */
+    background-color: var(--orange);
+}
+.guilds-wrapper .guilds .friends-online{                                        /* Friends online */
+    color: var(--white);
+    font-weight: normal;
+    margin: -12px 0 -3px 0;
+    line-height: 10px;
+    text-transform: none;
 }
 
 /* ACCOUNT */
@@ -168,6 +189,19 @@ body{
 }
 .account .btn-group .btn:hover{
     background: var(--a-black-dark);
+}
+.account .avatar-small{                                                         /* Avatar */
+    border-radius: 0;
+    width: 45px;
+    height: 45px;
+    background-size: 45px 45px;
+    margin-left: -10px;
+}
+.account .status{                                                               
+    border: 0;
+    border-radius: 0;
+    right: 0;
+    bottom: 0;
 }
 
 /* VOICE CONNECTION */
@@ -243,6 +277,18 @@ body{
 }
 
 /* CHAT */
+.chat .new-messages-bar{
+	background: rgba(255,153,0,0.9);
+	border-radius: 0;
+	left: 0;
+	right: 0;
+	font-weight: normal;
+}
+.chat .new-messages-bar button{
+	color: var(--white);
+	text-transform: none;
+	font-family: arial, sans-serif;
+}
 .chat .messages{                                                                /* Chat */
     background: var(--a-black-light);
 }
@@ -339,7 +385,7 @@ img.emote{                                                                      
     background:none;
     color: var(--white);
     padding-left: 10px;
-    animation: typewriter 3s;
+    overflow: hidden;
 }
 .typing:after{
     content: "";
@@ -357,9 +403,14 @@ img.emote{                                                                      
 /* MEMBERS */
 .channel-members-wrap{
     margin-left: 1px;
+    min-width: 220px;
 }
 .channel-members{                                                               /* Channel members list */
     background-color: var(--a-black-light);
+    padding: 5px 0;
+}
+.channel-members-loading{                                                       /* Hide loading background */
+  display: none;
 }
 .channel-members .member .member-username{                                      /* Usernames */
     font-family: Purista, sans-serif;
@@ -367,6 +418,37 @@ img.emote{                                                                      
 .channel-members .member.popout-open,
 .channel-members .member:hover{
     background: var(--a-white-dark);
+}
+.channel-members h2{                                                            /* Group headers */
+    color: var(--white);
+    font-family: Purista, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: none;
+    letter-spacing: normal;
+    padding: 0 10px;
+    margin: 5px 0;
+}
+.channel-members .member{                                                       /* Member */
+    padding: 1px 10px 0;
+}
+.channel-members .avatar-small{                                                 /* Members list avatars */
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    border-radius: 0;
+}
+.channel-members .avatar-small .status{                                         /* Members list status indicators */
+    border: 0;
+    border-radius: 0;
+    right: 0;
+    bottom: 0;
+}
+.channel-mmembers .avatar-small .status.status-typing{
+    right: 0px !important;
+}
+.channel-members .member .member-activity strong{                               /* Game/stream name */
+    font-weight: normal;
 }
 
 /* SCROLLBAR */
