@@ -34,3 +34,12 @@
 * Update: README screenshot
 * Update: README Install guide link
 * Fix: Friends button didn't indicate it was selected
+
+#### 1.7.0
+* Context menus
+* Tooltips
+* Pinned messages
+* Recent mentions
+* Create/join server
+* Avatar uploader
+* Fix: Rewrote the CSS relating to the friends button

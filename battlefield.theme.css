@@ -1,6 +1,6 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.6.0"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.7.0"}*//{}
 
-@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.6.0.css);
+@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.7.0.css);
 
 @font-face {
     font-family: 'Purista';
@@ -99,6 +99,9 @@ body{
     background:var(--a-black-light);
     margin-top: 1px;
 }
+.guilds-wrapper .guilds{
+    padding: 0px 15px 15px 15px;
+}
 .guilds-wrapper .guilds .guild.audio .guild-inner:after{                        /* Server voice indicator */
     top: -5px;
     right: -15px;
@@ -145,22 +148,16 @@ body{
 .guild-channels .channel-text .channel-name:before{                             /* Remove channel hashtags */
     display: none;
 }
-.guild:first-of-type:not(.guilds-add){                                          /* Select friends button, not add button */
-    height: 50px;
-    width: 80px;
-    padding-left: 15px;
-    margin-top: -18px;
-    margin-left: -15px;
-    border-bottom: 1px solid var(--a-white-dark);
-}
+
 .guild.active:first-of-type{                                                    /* Friends active */
     background-color: var(--orange);
+    width: 65px;
+    margin-left: -15px;
+    padding-left: 15px;
 }
 .guilds-wrapper .guilds .friends-online{                                        /* Friends online */
     color: var(--white);
     font-weight: normal;
-    margin: -12px 0 -3px 0;
-    line-height: 10px;
     text-transform: none;
 }
 
@@ -277,7 +274,7 @@ body{
 }
 
 /* CHAT */
-.chat .new-messages-bar{
+.chat .new-messages-bar{                                                        /* New messages bar */
 	background: rgba(255,153,0,0.9);
 	border-radius: 0;
 	left: 0;
@@ -385,6 +382,7 @@ img.emote{                                                                      
     background:none;
     color: var(--white);
     padding-left: 10px;
+    animation: typewriter 5s;
     overflow: hidden;
 }
 .typing:after{
@@ -583,6 +581,12 @@ img.emote{                                                                      
     font-weight: normal;
     color: var(--white);
 }
+.avatar-uploader .avatar-uploader-inner{                                        /* Avatar uploader */
+    background: var(--a-black-light);
+    border: 1px solid var(--a-black-dark);
+    border-radius: 0;
+}
+/* MODAL FORMS */
 .form .control-group div{
     color: var(--white);
     font-size: 13px;
@@ -887,6 +891,236 @@ div.control-group .shortcut-recorder input[type=text]{
 }
 #friends .friends-table .friends-row .friends-column-actions .friends-action+div{
     margin: 0;
+}
+
+/* NEW SERVER MODAL */
+.create-guild-container{
+    background: var(--a-black-light);
+    border-radius: 0;
+}
+.create-guild-container .create-or-join header{                                 /* Header */
+    font-family: Purista, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+.create-guild-container .action.create .action-header,
+.create-guild-container .action.join .action-header{                            /* Header */
+    font-family: Purista, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+.create-guild-container .action .action-body{                                   /* Description text */
+    color: var(--white);
+    font-size: 13px;
+    line-height: normal;
+}
+.create-guild-container .action.create .action-icon{                            /* Create image */
+    background: url(https://i.imgur.com/Bsf2rnt.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 40%;
+}
+.create-guild-container .action.join .action-icon{                              /* Join image */
+    background: url(https://i.imgur.com/04qVf2q.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 40%;
+}
+.create-guild-container .create-or-join .actions .or{                           /* OR */
+    display: none;
+}
+.create-guild-container .create-or-join .form-inner{
+    background:none;
+}
+.create-guild-container .action{
+    background: var(--a-black-light);
+    border: 0;
+}
+.create-guild-container .action .btn{                                           /* Buttons */
+    padding: 0 20px;
+    background-color: var(--a-black-light) !important;
+}
+.create-guild-container .action .btn:hover,
+.create-guild-container .action.join .btn:hover,
+.create-guild-container .action:hover.join .btn{
+    background-color: var(--a-black-dark) !important;
+    text-shadow: 0 0 0.5em var(--orange);
+}
+.create-guild-container .form-actions .btn-default{                             /* Back button */
+    font-size: 13px;
+    color: var(--white);
+}
+.create-guild-container .form .form-inner{
+    background: none;
+}
+.create-guild-container .form .form-actions{
+    background: none;
+    border: 0;
+}
+.create-guild-container h5{
+    font-family: Purista, sans-serif;
+    font-weight: normal;
+    color: var(--orange);
+}
+.create-guild-container p{
+    font-size: 13px;
+    font-weight: normal;
+    color: var(--white);
+}
+.create-guild-container .create-guild .guild-form .control-group{
+    margin-top: 10px;
+}
+.region-select{                                                                 /* Region select */
+    background-color: var(--a-black-light);
+}
+.region-select .region-select-inner{
+    border-radius: 0;
+}
+.region-select-name{                                                            /* Country/Location text */
+    font-weight: normal;
+}
+.region-select button{
+    background-color: var(--a-black-light);
+    border-radius: 0;
+    color: var(--white);
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+.region-select:hover .region-select-inner{
+    border-color: var(--white);
+    text-shadow: 0 0 0.5em var(--white);
+}
+.region-select:hover button{
+    background: transparent;
+    border-color: var(--white);
+    text-shadow: 0 0 0.5em var(--white);
+}
+.create-guild-container .join-server .btn-primary{                              /* Join Button */
+    background-color: var(--a-black-light);
+}
+.create-guild-container .join-server .btn-primary:hover{                        /* Join Button hover */
+    background: var(--a-black-dark);
+    border-color: var(--gold);
+}
+
+
+/* POPOUTS */
+.popout.popout-bottom-right.no-arrow,
+.popout.popout-bottom.no-arrow{
+    margin-top: 1px;
+}
+.popout .themed-popout{
+    background: var(--a-black-light);
+    border: 0;
+    border-radius: 0;
+}
+.popout .themed-popout .header{
+    background: var(--a-black-dark);
+    border-radius: 0;
+}
+.popout .themed-popout .header .title{                                          /* Popout header */
+    font-family: Purista, sans-serif;
+    font-style: 13px;
+    font-weight: normal;
+    color: var(--orange);
+}
+.messages-popout{
+    padding: 0;
+}
+.messages-popout .message-group{
+    background: var(--a-black-light);
+    margin: 1px 0 0 0;
+    border: 0;
+    border-radius: 0;
+}
+.messages-popout .channel-separator{                                            /* Channel/server header */
+    background: var(--a-black-light);
+    padding: 10px 0 5px 20px;
+    margin: 1px 0 -1px 0;
+}
+.messages-popout .channel-separator:first-of-type{                              /* First message */
+    margin-top: 0;
+}
+.messages-popout .message-group:hover .action-buttons{                          /* Remove shitty glow around jump button */
+  box-shadow: none;
+  background: none;
+}
+.messages-popout .message-group .action-buttons .jump-button{                   /* Jump button */
+    background: var(--a-black-dark);
+    border: 1px solid var(--white);
+    border-radius: 0;
+    color: var(--white);
+    margin-right: 0;
+}
+.messages-popout .message-group .action-buttons .jump-button:hover{             /* Jump button hover */
+    background: var(--a-black-dark);
+    border: 1px solid var(--white);
+    border-radius: 0;
+    color: var(--white);
+    text-shadow: 0 0 0.5em var(--white);
+}
+.messages-popout .message-group:hover .action-buttons .close-button{
+    opacity: 1;
+    margin-top: 0;
+    height: 18px;
+    border-top: 1px solid var(--white);
+    border-right: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+}
+
+/* CONTEXT MENUS */
+.context-menu{
+    background: var(--a-black-dark);
+    border-radius: 0;
+    box-shadow: none;
+    border-color: var(--a-white-dark);
+}
+.context-menu .item{
+    color: var(--white);
+    font-weight: normal;
+    line-height: 13px;
+}
+.context-menu .item:hover{
+    background: var(--a-black-dark);
+    color: var(--white);
+}
+.context-menu .item-group{
+    border: 0;
+}
+.context-menu .item-subMenu{
+    background: none;
+}
+
+/* TOOLTIPS */
+.tooltip{
+    background: #000;
+    border-radius: 0;
+    box-shadow: none;
+    font-weight: normal;
+    font-size: 11px;
+    padding: 8px;
+}
+.tipsy{
+    padding: 9px;
+    opacity: 1;
+}
+.tipsy-inner{
+    background: #000;
+    font-size: 11px;
+    padding: 8px;
+}
+.tooltip.tooltip-top:after{
+    border-top-color: var(--a-black-dark);
+}
+.tooltip.tooltip-right:after{
+    border-right-color: var(--a-black-dark);
+}
+.tooltip.tooltip-bottom:after{
+    border-bottom-color: var(--a-black-dark);
+}
+.tooltip.tooltip-left:after{
+    border-left-color: var(--a-black-dark);
 }
 
 /* REMOVE ART */
