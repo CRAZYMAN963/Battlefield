@@ -43,3 +43,11 @@
 * Create/join server
 * Avatar uploader
 * Fix: Rewrote the CSS relating to the friends button
+
+#### 1.8.0
+* User profile popup
+* User profile modal
+* Most modals should be styled
+* Fix: Unread messages bar wasn't styled correctly
+* Added var for background image
+* Added var for spritesheet

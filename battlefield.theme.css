@@ -1,6 +1,6 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.7.0"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.0"}*//{}
 
-@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.7.0.css);
+@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.8.0.css);
 
 @font-face {
     font-family: 'Purista';
@@ -24,6 +24,8 @@
     --a-black-light:rgba(7, 7, 7, 0.5);
     --a-white-dark:rgba(255, 255, 255, 0.1);
     --a-white-light:rgba(255, 255, 255, 0.8);
+
+    --sprite: url(https://i.imgur.com/MfiTe5A.png);
 }
 
 body{
@@ -99,15 +101,6 @@ body{
     background:var(--a-black-light);
     margin-top: 1px;
 }
-.guilds-wrapper .guilds{
-    padding: 0px 15px 15px 15px;
-}
-.guilds-wrapper .guilds .guild.audio .guild-inner:after{                        /* Server voice indicator */
-    top: -5px;
-    right: -15px;
-    border-radius: 0;
-    background-color: var(--a-white-dark)
-}
 .header-toolbar button{                                                         /* Toolbar buttons */
     width: 30px;
     height: 50px;
@@ -129,9 +122,6 @@ body{
 }
 .guild-channels{                                                                /* Channels pane */
     background: none;
-}
-.guild-channels header{
-	display: none;
 }
 .guild-channels .channel-text.selected,
 .guild-channels .channel-text:hover{                                            /* Channel hover */
@@ -163,8 +153,8 @@ body{
 
 /* ACCOUNT */
 .account{                                                                       /* Account box */
-    background: url(https://i.imgur.com/x9mXoFj.png);
-    background-position-y: -13px;
+    background: var(--sprite);
+    background-position-y: 0;
     background-repeat: no-repeat;
     border-top: 0;
     margin-top: 1px;
@@ -203,7 +193,8 @@ body{
 
 /* VOICE CONNECTION */
 #voice-connection{                                                              /* Voice connection box */
-    background: url(https://i.imgur.com/6doJ1rr.png);
+    background: var(--sprite);
+    background-position-y: 53px;
     border-top: none;
     margin-top: 1px;
 }
@@ -233,6 +224,9 @@ body{
 .guilds-wrapper{                                                                /* Servers list */
     background: var(--a-black-light);
     margin-right: 1px;
+}
+.guilds-wrapper .guilds{
+    padding: 0px 15px 15px 15px;
 }
 .guilds-wrapper .guild-separator{                                               /* Hide separator */
     display: none;
@@ -272,19 +266,48 @@ body{
     margin-top: -30px;
     left: -15px;
 }
+.guilds-wrapper .guilds .guild.audio .guild-inner:after{                        /* Server voice indicator */
+    top: -5px;
+    right: -15px;
+    border-radius: 0;
+    background-color: var(--a-white-dark);
+    width: 20px;
+    height: 20px;
+}
+.guilds-wrapper .guilds .guild .badge{
+    bottom: -5px;
+    right: -15px;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: var(--orange);
+    text-shadow: none;
+}
 
 /* CHAT */
 .chat .new-messages-bar{                                                        /* New messages bar */
-	background: rgba(255,153,0,0.9);
-	border-radius: 0;
-	left: 0;
-	right: 0;
-	font-weight: normal;
+    background: rgba(255,153,0,0.9);
+    border-radius: 0;
+    left: 0;
+    right: 0;
+    font-weight: normal;
 }
-.chat .new-messages-bar button{
-	color: var(--white);
-	text-transform: none;
-	font-family: arial, sans-serif;
+.chat .new-messages-bar button:first-child,
+.chat .new-messages-bar button:last-child{
+    color: var(--white);
+    text-transform: none;
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+.chat .empty-message{
+    height: 50px;
+    border-color: var(--orange);
+}
+.chat .empty-message h1{
+    color: var(--orange);
+    font-family: Purista, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
 }
 .chat .messages{                                                                /* Chat */
     background: var(--a-black-light);
@@ -349,6 +372,9 @@ body{
 }
 img.emote{                                                                      /* Twitch/BTTV/FFz emotes */
     margin: -14px 0;
+}
+.chat .welcome-message{                                                         /* Hide welcome messages */
+    display: none;
 }
 
 /* CHAT BOX */
@@ -892,6 +918,33 @@ div.control-group .shortcut-recorder input[type=text]{
 #friends .friends-table .friends-row .friends-column-actions .friends-action+div{
     margin: 0;
 }
+.add-friend-popout{                                                             /* Add friend popout */
+    background: none;
+}
+.add-friend-popout header{                                                      /* Header */
+    background: var(--a-black-dark);
+    font-family: Purista, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    color: var(--orange);
+}
+.add-friend-popout section{
+    background: var(--a-black-light);
+    border-radius: 0;
+    color: var(--white);
+    font-size: 13px;
+}
+.add-friend-popout header input{
+    border: 1px solid var(--white);
+    border-radius: 0;
+}
+.add-friend-popout header input:focus{
+    border: 1px solid var(--orange);
+}
+.add-friend-popout .btn:disabled{
+    background: var(--a-black-light);
+    color: var(--a-black-dark);
+}
 
 /* NEW SERVER MODAL */
 .create-guild-container{
@@ -1004,6 +1057,137 @@ div.control-group .shortcut-recorder input[type=text]{
     border-color: var(--gold);
 }
 
+/* DELETE MESSAGE MODAL */
+.confirm-message-modal .form-inner p{                                           /* text */
+    color: var(--white);
+    font-size: 13px;
+}
+.confirm-message-modal .form-inner > .message-group > .comment > .message > .body > h2 > .username-wrapper > .user-name{
+    color: var(--orange);
+    font-family: Purista, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+.confirm-message-modal .form-inner > .message-group > .comment > .message > .body > h2 > .timestamp{
+    color: var(--white);
+    font-size: 10px;
+}
+.confirm-message-modal .protip{                                                 /* Hide protip */
+    display: none;
+}
+.confirm-message-modal .btn.red{
+    background: var(--a-black-light) !important;
+}
+.confirm-message-modal .btn.red:hover{
+    background: var(--a-black-dark) !important;
+}
+
+/* VARIOUS MODALS */
+.modal .form-header{                                                            /* Header */
+    padding: 0 20px;
+    background: var(--a-black-dark);
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 1px;
+}
+.modal header{                                                                  /* Header text */
+    font-family: Purista, sans-serif;
+    font-weight: normal;
+    color: var(--orange);
+}
+.modal .form-inner{                                                             /* Modal body */
+    background-color: var(--a-black-light);
+}
+.modal .form-actions{                                                           /* Modal footer/buttons area */
+    background-color: var(--a-black-light);
+    border: 0;
+    border-radius: 0;
+    margin-top: 1px;
+}
+
+/* MD MODAL */
+.markdown-modal{
+    background: transparent;
+}
+.markdown-modal .markdown-modal-header{
+    padding: 20px;
+    background: var(--a-black-dark);
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 1px;
+    margin-top: 0;
+    font-family: Purista, sans-serif;
+    font-weight: normal;
+    color: var(--orange);
+}
+.markdown-modal .markdown-modal-header .markdown-modal-close{
+    top: initial;
+}
+.markdown-modal .scroller-wrap{
+    background-color: var(--a-black-light);
+}
+.markdown-modal ul li{
+    color: var(--white);
+    font-weight: normal;
+}
+.markdown-modal .markdown-modal-footer{
+    background-color: var(--a-black-light);
+    border: 0;
+    border-radius: 0;
+    margin-top: 1px;
+    color: var(--white);
+    font-weight: normal;
+}
+
+/* HELP MODAL */
+.need-help-modal .header{
+    background: var(--a-black-dark);
+    border-radius: 0;
+    margin-bottom: 1px;
+}
+.need-help-modal .header h1{
+    margin-top: 0;
+    font-family: Purista, sans-serif;
+    font-weight: normal;
+    text-transform: lowercase;
+    color: var(--orange);
+}
+.need-help-modal .header h1::first-letter{
+    text-transform: uppercase;
+}
+.need-help-modal .header input[type=text]{
+    border-radius: 0;
+    color: var(--white);
+    height: 32px;
+    box-shadow: none;
+    background-color: var(--a-black-light);
+    border: 1px solid var(--white);
+}
+.need-help-modal .header input[type=text]:hover{
+    background: var(--a-black-dark);
+}
+.need-help-modal .header input[type=text]:focus{
+    border: 1px solid var(--orange);
+    background: var(--a-black-dark);
+}
+.need-help-modal .form-inner{
+    background: var(--a-black-light);
+    padding: 0 30px;
+    align-items: baseline !important;
+}
+.need-help-modal ul li{
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 13px;
+}
+.need-help-modal .footer{
+    background: var(--a-black-light);
+    border: 0;
+    border-radius: 0;
+    margin-top: 1px;
+    font-weight: normal;
+    color: var(--white);
+}
 
 /* POPOUTS */
 .popout.popout-bottom-right.no-arrow,
@@ -1024,6 +1208,9 @@ div.control-group .shortcut-recorder input[type=text]{
     font-style: 13px;
     font-weight: normal;
     color: var(--orange);
+}
+.popout .themed-popout .footer{
+    display: none;
 }
 .messages-popout{
     padding: 0;
@@ -1069,6 +1256,179 @@ div.control-group .shortcut-recorder input[type=text]{
     border-bottom: 1px solid var(--white);
 }
 
+/* VOICE CONNECTION POP */
+#voice-connection-popout header{                                                /* Voice connection popup header */
+    background: var(--a-black-dark);
+    color: var(--orange);
+    font-family: Purista, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    border-radius: 0;
+}
+#voice-connection-popout section{
+    background: var(--a-black-light);
+    border-radius: 0;
+}
+#voice-connection-popout section p{
+    color: var(--white);
+    font-style: 13px;
+}
+#voice-connection-popout .secured{                                              /* IP Address Secured */
+    font-family: Purista, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+#voice-connection-popout .debug-button{                                         /* Debug link */
+    color: var(--white);
+    font-weight: normal;
+}
+.popout.popout-top-right section:after,
+.popout.popout-top section:after{                                               /* Bottom arrow */
+    border-top-color: var(--a-black-light);
+}
+
+/* MEMBER INFO POP */
+.user-popout{
+    border-radius: 0;
+}
+.user-popout .header{                                                           /* Popout header */
+    background: var(--a-black-dark);
+    border-radius: 0;
+}
+.user-popout .avatar-wrapper .avatar-hint{                                      /* View profile overlay */
+    border-radius: 0;
+}
+.user-popout .avatar-wrapper .avatar-popout{                                    /* Avatar */
+    border: 1px solid var(--a-black-dark);
+    border-radius: 0;
+}
+.user-popout .username-wrapper .discord-tag .username{                          /* Username */
+    color: var(--orange);
+    font-family: Purista, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+.user-popout .username-wrapper .discord-tag .discriminator{                     /* Discriminator */
+    line-height: 16px;
+    padding-left: 5px;
+    font-size: 10px;
+    font-weight: normal;
+    color: var(--a-white-light);
+}
+.user-popout .username-wrapper .activity{                                       /* Current game */
+    font-weight: normal;
+    color: var(--white);
+}
+.user-popout .username-wrapper .activity strong{
+    font-weight: normal;
+}
+.user-popout .body{
+    background: var(--a-black-dark);
+}
+.user-popout .footer{                                                           /* Footer */
+    background: var(--a-black-dark);
+    border-top: none;
+}
+.user-popout .footer .quick-message-wrapper .input{                             /* Quick message box */
+    border: 1px solid var(--white);
+    border-radius: 0;
+    background: var(--a-black-light);
+    color: var(--white);
+    font-size: 13px;
+    line-height: 14px;
+}
+.user-popout .footer .quick-message-wrapper .input:focus{
+    border: 1px solid var(--orange);
+    background: var(--a-black-dark);
+}
+.user-popout .footer .update-notice{                                            /* Hide protip message */
+    display: none;
+}
+
+/* USER PROFILE */
+#user-profile-modal{
+    border-radius: 0;
+}
+#user-profile-modal .header{                                                    /* Profile header */
+    background: var(--a-black-dark);
+}
+#user-profile-modal .header .discord-tag .username{                             /* Username */
+    color: var(--orange);
+    font-family: Purista, sans-serif;
+    font-weight: normal;
+}
+#user-profile-modal .header .discord-tag .discriminator{                        /* Discriminator */
+    padding-left: 5px;
+    font-size: 10px;
+    font-weight: normal;
+    color: var(--a-white-light);
+}
+#user-profile-modal .avatar-profile{                                            /* Avatar */
+    border: 1px solid var(--a-black-dark);
+    border-radius: 0;
+}
+#user-profile-modal .avatar-profile .status{                                    /* Status indicator */
+    border-radius: 0;
+    box-shadow: none;
+    right: 0;
+    bottom: 0;
+    border-top: 1px solid var(--a-black-dark);
+    border-left: 1px solid var(--a-black-dark);
+}
+#user-profile-modal .sub-header{                                                /* Subheader */
+    background: var(--a-black-light);
+}
+#user-profile-modal .tab-bar{                                                   /* Tabs */
+    background: var(--a-black-light);
+}
+#user-profile-modal .scroller{                                                  /* List of servers */
+    background: var(--a-black-light);
+}
+#user-profile-modal .guilds .guild{                                             /* Server */
+    color: var(--white);
+    font-weight: normal;
+}
+#user-profile-modal .guilds .guild:hover{
+    background: var(--a-black-dark);
+    color: var(--white);
+}
+#user-profile-modal .guilds .avatar-large{                                      /* Server icon */
+    border-radius: 0;
+}
+#user-profile-modal .empty{                                                     /* No friends in common background */
+    background: var(--a-black-light);
+}
+#user-profile-modal .empty .empty-icon-friends,
+#user-profile-modal .empty .empty-text{                                         /* Hide no friends in common */
+    display: none;
+}
+#user-profile-modal footer{                                                     /* Footer */
+    background: var(--a-black-light);
+    border-top: none;
+}
+#user-profile-modal .btn{                                                       /* Message button */
+    border: 1px solid var(--white);
+    border-radius: 0;
+    background: var(--a-black-light);
+    font-weight: normal;
+}
+#user-profile-modal .btn:hover{
+    border: 1px solid var(--white);
+    background: var(--a-black-dark);
+    text-shadow: 0 0 0.5em var(--orange);
+}
+#user-profile-modal footer .btn.add-friend{                                     /* Add friend button */
+    border: 1px solid var(--orange);
+    border-radius: 0;
+    background: var(--a-black-light);
+    font-weight: normal;
+}
+#user-profile-modal footer .btn.add-friend:hover{
+    background: var(--a-black-dark);
+    border: 1px solid var(--orange);
+    text-shadow: 0 0 0.5em var(--orange);
+}
+
 /* CONTEXT MENUS */
 .context-menu{
     background: var(--a-black-dark);
@@ -1103,7 +1463,7 @@ div.control-group .shortcut-recorder input[type=text]{
 }
 .tipsy{
     padding: 9px;
-    opacity: 1;
+    opacity: 1 !important;
 }
 .tipsy-inner{
     background: #000;
