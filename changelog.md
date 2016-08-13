@@ -51,3 +51,6 @@
 * Fix: Unread messages bar wasn't styled correctly
 * Added var for background image
 * Added var for spritesheet
+
+#### 1.8.1
+* Changed border colours bewteen chat groups

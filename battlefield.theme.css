@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.0"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.1"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.8.0.css);
 
@@ -313,7 +313,9 @@ body{
     background: var(--a-black-light);
 }
 .message-group{                                                                 /* Message */
-    border-bottom: 1px solid var(--a-black-dark);
+    border-bottom: 1px solid var(--a-white-dark);
+    margin-left: 0;
+    margin-right: 0;
 }
 .message-group.compact .message .markup .user-name{                             /* Username next to message */
     font-family: Purista, sans-serif;
