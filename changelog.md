@@ -80,3 +80,6 @@
 
 #### 1.8.9
 * Fix: Background images flickering randomly when right clicking or refocusing Discord (Thanks, Zerthox)
+
+#### 1.8.10
+* Fiddle: Emote margins (again)

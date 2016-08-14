@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.9"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.10"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.8.0.css);
 @font-face {
@@ -378,7 +378,7 @@ body{
     font-family: Purista, sans-serif;
 }
 img.emote{                                                                      /* Twitch/BTTV/FFz emotes */
-    margin: -14px 0;
+    margin: -10px 0;
 }
 .chat .welcome-message{                                                         /* Hide welcome messages */
     display: none;
