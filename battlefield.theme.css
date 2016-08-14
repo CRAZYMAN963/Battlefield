@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.4"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.6"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.8.0.css);
 
@@ -1083,10 +1083,6 @@ div.control-group .shortcut-recorder input[type=text]{
 }
 
 /* DELETE MESSAGE MODAL */
-.confirm-message-modal .form-inner p{                                           /* text */
-    color: var(--white);
-    font-size: 13px;
-}
 .confirm-message-modal .form-inner > .message-group > .comment > .message > .body > h2 > .username-wrapper > .user-name{
     color: var(--orange);
     font-family: Purista, sans-serif;
@@ -1107,6 +1103,8 @@ div.control-group .shortcut-recorder input[type=text]{
     background: var(--a-black-dark) !important;
 }
 
+/* 
+
 /* VARIOUS MODALS */
 .modal .form-header{                                                            /* Header */
     padding: 0 20px;
@@ -1123,6 +1121,10 @@ div.control-group .shortcut-recorder input[type=text]{
 .modal .form-inner{                                                             /* Modal body */
     background-color: var(--a-black-light);
 }
+.modal .form-inner p{
+	color: var(--white);
+	font-size: 13px;
+}
 .modal .form-actions{                                                           /* Modal footer/buttons area */
     background-color: var(--a-black-light);
     border: 0;
@@ -1131,6 +1133,12 @@ div.control-group .shortcut-recorder input[type=text]{
 }
 .modal .scroller{
 	color: var(--white);
+}
+.modal .form-actions .btn.red{
+	background: var(--a-black-light);
+}
+.modal .form-actions .btn.red:hover{
+	background: var(--a-black-dark);
 }
 
 /* MD MODAL */
