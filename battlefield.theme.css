@@ -1,7 +1,6 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.7"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.8"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.8.0.css);
-
 @font-face {
     font-family: 'Purista';
     src: url('https://dl.dropboxusercontent.com/u/9889565/BetterDiscord/battlefield/PuristaMedium.woff');
@@ -15,7 +14,7 @@
 
 :root{
     /* BACKGROUND */
-    --background: url(https://i.imgur.com/lvIR30n.jpg);
+    --background: url(https://i.imgur.com/lvIR30n.jpg);                         /* Put your background image here if you want to change it from default */
 
     /* COLOURS */
     --black:#000000;
@@ -192,7 +191,7 @@ body{
     background-size: 45px 45px;
     margin-left: -10px;
 }
-.account .status{                                                               
+.account .status{                                                               /* Status indicator */
     border: 0;
     border-radius: 0;
     right: 0;
@@ -282,7 +281,7 @@ body{
     width: 20px;
     height: 20px;
 }
-.guilds-wrapper .guilds .guild .badge{
+.guilds-wrapper .guilds .guild .badge{                                          /* Server notification indicator */
     bottom: -5px;
     right: -15px;
     border-radius: 0;
@@ -299,19 +298,19 @@ body{
     right: 0;
     font-weight: normal;
 }
-.chat .new-messages-bar button:first-child,
-.chat .new-messages-bar button:last-child{
+.chat .new-messages-bar button:first-child,                                     /* X new messages since... text */
+.chat .new-messages-bar button:last-child{                                      /* Mark as read text */
     color: var(--white);
     text-transform: none;
     font-family: arial, sans-serif;
     font-size: 13px;
     font-weight: normal;
 }
-.chat .empty-message{
+.chat .empty-message{                                                           /* This is the beginning of message history text */
     height: 50px;
     border-color: var(--orange);
 }
-.chat .empty-message h1{
+.chat .empty-message h1{                                                        /* This is the beginning of message history text */
     color: var(--orange);
     font-family: Purista, sans-serif;
     font-size: 13px;
@@ -425,7 +424,7 @@ img.emote{                                                                      
     animation: typewriter 5s;
     overflow: hidden;
 }
-.typing:after{
+.typing:after{                                                                  /* Blinking cursor */
     content: "";
     width: 10px;
     height: 100%;
@@ -566,13 +565,13 @@ img.emote{                                                                      
 .settings .settings-inner .settings-panel{
     padding: 25px;
 }
-.settings-connections-wrapper .user-settings-modal-connections .user-settings-modal-connections-list .connection .connection-integrations.no-integrations{
+.settings-connections-wrapper .user-settings-modal-connections .user-settings-modal-connections-list .connection .connection-integrations.no-integrations{ /* Jesus fucking christ Discord */
     color: var(--white);
     font-weight: normal;
     font-size: 13px;
     text-transform: none;
 }
-.settings-connections-wrapper .user-settings-modal-connections .user-settings-modal-connections-list .connection .connection-integrations{
+.settings-connections-wrapper .user-settings-modal-connections .user-settings-modal-connections-list .connection .connection-integrations{ /* Jesus fucking christ Discord */
     border: 0;
     background: var(--a-black-light);
 }
@@ -626,28 +625,37 @@ img.emote{                                                                      
     border: 1px solid var(--a-black-dark);
     border-radius: 0;
 }
-.radio-theme.light.compact label{
+.radio-theme.light.compact label{                                               /* Light theme */
     background: url(https://i.imgur.com/VmPjmCb.png);
 }
-.radio-theme.dark.compact label{
+.radio-theme.dark.compact label{                                                /* Dark theme */
     background: url(https://i.imgur.com/HVD3wDP.png);
 }
-.now-playing{
+.now-playing{                                                                   /* Game detected */
     background: transparent;
     border: 1px solid var(--orange);
     border-radius: 0;
 }
-.now-playing.no-detection{
+.now-playing.no-detection{                                                      /* No game detected */
     background: transparent;
     border: 1px solid var(--white);
     border-radius: 0;
+}
+.user-settings-security .backup-codes p{                                        /* 2FA backup codes info */
+    color: var(--white);
+}
+.user-settings-security .backup-codes p strong{                                 /* 2FA backup codes warning */
+    color: var(--white);
+    font-weight: bold;
+}
+.user-settings-security .backup-codes .code{                                    /* 2FA backup codes */
+    color: var(--white);
 }
 /* MODAL FORMS */
 .form .control-group div{
     color: var(--white);
     font-size: 13px;
 }
-
 .form .control-group label{                                                     /* Group header */
     color: var(--white);
     font-family: Purista, sans-serif;
@@ -777,7 +785,7 @@ img.emote{                                                                      
     background: var(--a-black-dark);
     text-shadow: 0 0 0.5em var(--white);
 }
-div.control-group .shortcut-recorder input[type=text]{
+div.control-group .shortcut-recorder input[type=text]{                          /* Hotkey recorder */
     border: 1px solid var(--white);
     border-radius: 0;
     text-shadow: none;
@@ -824,7 +832,7 @@ div.control-group .shortcut-recorder input[type=text]{
 }
 
 /* FRIENDS */
-#friends .friends-header{
+#friends .friends-header{                                                       /* Title bar */
     background: var(--a-black-dark);
     height: 50px;
     margin-bottom: 1px;
@@ -832,12 +840,12 @@ div.control-group .shortcut-recorder input[type=text]{
     box-shadow: none;
     padding:0 20px 0 0;
 }
-.private-channels .search-bar{
+.private-channels .search-bar{                                                  /* Search bar */
     background: var(--a-black-dark);
     border-radius: 0;
     height: 50px;
 }
-#friends{
+#friends{                                                                       /* List of friends */
     background: none;
 }
 #friends .add-friend{                                                           /* Add friend button */
@@ -951,24 +959,24 @@ div.control-group .shortcut-recorder input[type=text]{
 .add-friend-popout{                                                             /* Add friend popout */
     background: none;
 }
-.add-friend-popout header{                                                      /* Header */
+.add-friend-popout header{                                                      /* Add friend popout Header */
     background: var(--a-black-dark);
     font-family: Purista, sans-serif;
     font-size: 13px;
     font-weight: normal;
     color: var(--orange);
 }
-.add-friend-popout section{
+.add-friend-popout section{                                                     /* Add friend popout body */
     background: var(--a-black-light);
     border-radius: 0;
     color: var(--white);
     font-size: 13px;
 }
-.add-friend-popout header input{
+.add-friend-popout header input{                                                /* Add friend popout textbox */
     border: 1px solid var(--white);
     border-radius: 0;
 }
-.add-friend-popout header input:focus{
+.add-friend-popout header input:focus{                                          /* Add friend popout textbox selected */
     border: 1px solid var(--orange);
 }
 .add-friend-popout .btn:disabled{
@@ -1181,22 +1189,22 @@ div.control-group .shortcut-recorder input[type=text]{
 }
 
 /* HELP MODAL */
-.need-help-modal .header{
+.need-help-modal .header{                                                       /* Header */
     background: var(--a-black-dark);
     border-radius: 0;
     margin-bottom: 1px;
 }
-.need-help-modal .header h1{
+.need-help-modal .header h1{                                                    /* Header text */
     margin-top: 0;
     font-family: Purista, sans-serif;
     font-weight: normal;
     text-transform: lowercase;
     color: var(--orange);
 }
-.need-help-modal .header h1::first-letter{
+.need-help-modal .header h1::first-letter{                                      /* Some fucking numpty used all caps in the source code */
     text-transform: uppercase;
 }
-.need-help-modal .header input[type=text]{
+.need-help-modal .header input[type=text]{                                      /* textbox */
     border-radius: 0;
     color: var(--white);
     height: 32px;
@@ -1211,17 +1219,17 @@ div.control-group .shortcut-recorder input[type=text]{
     border: 1px solid var(--orange);
     background: var(--a-black-dark);
 }
-.need-help-modal .form-inner{
+.need-help-modal .form-inner{                                                   /* Body */
     background: var(--a-black-light);
     padding: 0 30px;
     align-items: baseline !important;
 }
-.need-help-modal ul li{
+.need-help-modal ul li{                                                         /* List item */
     font-size: 13px;
     font-weight: normal;
     line-height: 13px;
 }
-.need-help-modal .footer{
+.need-help-modal .footer{                                                       /* Footer */
     background: var(--a-black-light);
     border: 0;
     border-radius: 0;

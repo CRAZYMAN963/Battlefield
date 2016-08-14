@@ -68,9 +68,12 @@
 * Styled Game Detection box
 
 #### 1.8.6
-* Fix uncoloured text in Leave Server modal
-* Fix red button in Leave Server modal
+* Fix: uncoloured text in Leave Server modal
+* Fix: red button in Leave Server modal
 
 #### 1.8.7
 * Moved background image to a var
-* Fix indentation in some places using tabs
+* Fix: indentation in some places using tabs
+
+#### 1.8.8
+* Fix: Low readability on 2FA codes
