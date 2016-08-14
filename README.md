@@ -9,3 +9,7 @@ You'll also need to go to Appearance settings and choose the light theme.
 
 # Preview
 ![Preview](https://i.imgur.com/JqvVw5k.jpg)
+
+# User Settings
+You can change the background image used in the theme by editing `--background` near the top of the CSS file. Remember to use HTTPS or else the image won't load.  
+Everything else in `:root` you should leave alone unless you know what you are doing!
