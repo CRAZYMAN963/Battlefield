@@ -57,3 +57,6 @@
 
 #### 1.8.2
 * Changed top borders on channel headers
+
+#### 1.8.3
+* Changed colour of scrollbars to be less blinding

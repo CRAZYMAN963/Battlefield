@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.2"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.3"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.8.0.css);
 
@@ -489,7 +489,7 @@ img.emote{                                                                      
     width: 5px;
 }
 .scroller-wrap .scroller::-webkit-scrollbar-thumb{                              /* Chat scrollbar thumb */
-    background: var(--white);
+    background: var(--a-white-light);
     -webkit-transition: background ease-in 1s;
     border: 0;
 }
