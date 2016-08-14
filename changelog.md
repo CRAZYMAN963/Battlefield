@@ -60,3 +60,6 @@
 
 #### 1.8.3
 * Changed colour of scrollbars to be less blinding
+
+#### 1.8.4
+* Added custom images in Settings > Appearance > Themes
