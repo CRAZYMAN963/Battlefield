@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.1"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.2"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.8.0.css);
 
@@ -122,6 +122,9 @@ body{
 }
 .guild-channels{                                                                /* Channels pane */
     background: none;
+}
+.guild-channels header{															/* Header */
+	margin-top: 5px;
 }
 .guild-channels .channel-text.selected,
 .guild-channels .channel-text:hover{                                            /* Channel hover */
@@ -351,6 +354,10 @@ body{
     background: var(--a-black-light);
     border: 0;
     border-radius: 0;
+}
+.chat .divider{
+    margin-left: 0;
+    margin-right: 0;
 }
 .chat .divider.divider-red>div:last-of-type,                                    /* New messages right divider */
 .chat .divider>div:last-of-type{                                                /* New day right divider */
@@ -1105,6 +1112,9 @@ div.control-group .shortcut-recorder input[type=text]{
     border: 0;
     border-radius: 0;
     margin-top: 1px;
+}
+.modal .scroller{
+	color: var(--white);
 }
 
 /* MD MODAL */

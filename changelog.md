@@ -54,3 +54,6 @@
 
 #### 1.8.1
 * Changed border colours bewteen chat groups
+
+#### 1.8.2
+* Changed top borders on channel headers
