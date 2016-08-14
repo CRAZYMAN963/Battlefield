@@ -77,3 +77,6 @@
 
 #### 1.8.8
 * Fix: Low readability on 2FA codes
+
+#### 1.8.9
+* Fix: Background images flickering randomly when right clicking or refocusing Discord (Thanks, Zerthox)

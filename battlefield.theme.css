@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.8"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.9"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.8.0.css);
 @font-face {
@@ -13,9 +13,6 @@
 }
 
 :root{
-    /* BACKGROUND */
-    --background: url(https://i.imgur.com/lvIR30n.jpg);                         /* Put your background image here if you want to change it from default */
-
     /* COLOURS */
     --black:#000000;
     --white:#FFFFFF;
@@ -27,21 +24,6 @@
     --a-black-light:rgba(7, 7, 7, 0.5);
     --a-white-dark:rgba(255, 255, 255, 0.1);
     --a-white-light:rgba(255, 255, 255, 0.8);
-
-    /* IMAGES */
-    --sprite: url(https://i.imgur.com/MfiTe5A.png);
-}
-
-body{
-    font-family: Arial,sans-serif;
-}
-
-.app{
-    background: var(--background);
-    background-size: cover;
-}
-.chat .content{
-    background: transparent;
 }
 
 /* ANIMATION */
@@ -58,6 +40,18 @@ body{
     0%{ background: transparent; }
     50%{ background: var(--a-white-dark); }
     100%{ background: transparent; }
+}
+
+body{
+    font-family: Arial,sans-serif;
+}
+
+.app{
+    background: url(https://i.imgur.com/lvIR30n.jpg);
+    background-size: cover;
+}
+.chat .content{
+    background: transparent;
 }
 
 /* TITLE BAR */
@@ -160,7 +154,7 @@ body{
 
 /* ACCOUNT */
 .account{                                                                       /* Account box */
-    background: var(--sprite);
+    background: url(https://i.imgur.com/MfiTe5A.png);
     background-position-y: 0;
     background-repeat: no-repeat;
     border-top: 0;
@@ -200,7 +194,7 @@ body{
 
 /* VOICE CONNECTION */
 #voice-connection{                                                              /* Voice connection box */
-    background: var(--sprite);
+    background: url(https://i.imgur.com/MfiTe5A.png);
     background-position-y: 53px;
     border-top: none;
     margin-top: 1px;
@@ -508,8 +502,10 @@ img.emote{                                                                      
 
 /* SETTINGS MODAL */
 .callout-backdrop{                                                              /* Background behind modals */
-    background-image: var(--background);
+    background-color: transparent !important;
+    background-image: url(https://i.imgur.com/lvIR30n.jpg);
     background-size: cover;
+    opacity: 0.9 !important;
 }
 .settings .settings-header{                                                     /* Sidebar */
     background: var(--a-black-dark);
@@ -1510,7 +1506,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     font-size: 11px;
     padding: 8px;
 }
-.tipsy{
+.tipsy{                                                                         /* Emote tooltips */
     padding: 9px;
     opacity: 1 !important;
 }
