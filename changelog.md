@@ -70,3 +70,7 @@
 #### 1.8.6
 * Fix uncoloured text in Leave Server modal
 * Fix red button in Leave Server modal
+
+#### 1.8.7
+* Moved background image to a var
+* Fix indentation in some places using tabs

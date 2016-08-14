@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.6"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.7"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.8.0.css);
 
@@ -14,6 +14,10 @@
 }
 
 :root{
+    /* BACKGROUND */
+    --background: url(https://i.imgur.com/lvIR30n.jpg);
+
+    /* COLOURS */
     --black:#000000;
     --white:#FFFFFF;
     --orange:#FF9900;
@@ -25,6 +29,7 @@
     --a-white-dark:rgba(255, 255, 255, 0.1);
     --a-white-light:rgba(255, 255, 255, 0.8);
 
+    /* IMAGES */
     --sprite: url(https://i.imgur.com/MfiTe5A.png);
 }
 
@@ -33,7 +38,7 @@ body{
 }
 
 .app{
-    background: url(https://i.imgur.com/lvIR30n.jpg);
+    background: var(--background);
     background-size: cover;
 }
 .chat .content{
@@ -123,8 +128,8 @@ body{
 .guild-channels{                                                                /* Channels pane */
     background: none;
 }
-.guild-channels header{															/* Header */
-	margin-top: 5px;
+.guild-channels header{                                                         /* Header */
+    margin-top: 5px;
 }
 .guild-channels .channel-text.selected,
 .guild-channels .channel-text:hover{                                            /* Channel hover */
@@ -504,7 +509,7 @@ img.emote{                                                                      
 
 /* SETTINGS MODAL */
 .callout-backdrop{                                                              /* Background behind modals */
-    background-image: url(https://i.imgur.com/lvIR30n.jpg);
+    background-image: var(--background);
     background-size: cover;
 }
 .settings .settings-header{                                                     /* Sidebar */
@@ -622,20 +627,20 @@ img.emote{                                                                      
     border-radius: 0;
 }
 .radio-theme.light.compact label{
-	background: url(https://i.imgur.com/VmPjmCb.png);
+    background: url(https://i.imgur.com/VmPjmCb.png);
 }
 .radio-theme.dark.compact label{
-	background: url(https://i.imgur.com/HVD3wDP.png);
+    background: url(https://i.imgur.com/HVD3wDP.png);
 }
 .now-playing{
-	background: transparent;
-	border: 1px solid var(--orange);
-	border-radius: 0;
+    background: transparent;
+    border: 1px solid var(--orange);
+    border-radius: 0;
 }
 .now-playing.no-detection{
-	background: transparent;
-	border: 1px solid var(--white);
-	border-radius: 0;
+    background: transparent;
+    border: 1px solid var(--white);
+    border-radius: 0;
 }
 /* MODAL FORMS */
 .form .control-group div{
@@ -1122,8 +1127,8 @@ div.control-group .shortcut-recorder input[type=text]{
     background-color: var(--a-black-light);
 }
 .modal .form-inner p{
-	color: var(--white);
-	font-size: 13px;
+    color: var(--white);
+    font-size: 13px;
 }
 .modal .form-actions{                                                           /* Modal footer/buttons area */
     background-color: var(--a-black-light);
@@ -1132,13 +1137,13 @@ div.control-group .shortcut-recorder input[type=text]{
     margin-top: 1px;
 }
 .modal .scroller{
-	color: var(--white);
+    color: var(--white);
 }
 .modal .form-actions .btn.red{
-	background: var(--a-black-light);
+    background: var(--a-black-light);
 }
 .modal .form-actions .btn.red:hover{
-	background: var(--a-black-dark);
+    background: var(--a-black-dark);
 }
 
 /* MD MODAL */

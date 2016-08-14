@@ -1,6 +1,6 @@
 # Battlefield
 A custom theme for Discord (BetterDiscord).  
-Currently: `v1.8.6`
+Currently: `v1.8.7`
 
 # Installation
 [Download](https://raw.githubusercontent.com/TakosThings/battlefield/master/battlefield.theme.css)  
