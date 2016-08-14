@@ -627,6 +627,16 @@ img.emote{                                                                      
 .radio-theme.dark.compact label{
 	background: url(https://i.imgur.com/HVD3wDP.png);
 }
+.now-playing{
+	background: transparent;
+	border: 1px solid var(--orange);
+	border-radius: 0;
+}
+.now-playing.no-detection{
+	background: transparent;
+	border: 1px solid var(--white);
+	border-radius: 0;
+}
 /* MODAL FORMS */
 .form .control-group div{
     color: var(--white);

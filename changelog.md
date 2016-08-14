@@ -63,3 +63,6 @@
 
 #### 1.8.4
 * Added custom images in Settings > Appearance > Themes
+
+#### 1.8.5
+* Styled Game Detection box
