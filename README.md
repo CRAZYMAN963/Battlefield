@@ -10,4 +10,5 @@ You'll also need to go to Appearance settings and choose the light theme.
 # Preview
 ![Preview](https://i.imgur.com/JqvVw5k.jpg)
 
-# User Settings (advanced)
+# User Settings \(advanced\)
+You can change the background image used in the theme by editing the `background` in `.app` near the top of the CSS file. Remember to use HTTPS or else the image won't load.
