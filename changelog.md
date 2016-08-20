@@ -83,3 +83,6 @@
 
 #### 1.8.10
 * Fiddle: Emote margins (again)
+
+#### 1.8.11
+* Fix: unstyled notification badge on Friends header bar

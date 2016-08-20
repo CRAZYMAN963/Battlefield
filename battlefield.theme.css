@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.10"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.11"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.8.0.css);
 @font-face {
@@ -884,6 +884,16 @@ div.control-group .shortcut-recorder input[type=text]{                          
 }
 #friends .friends-header .tab-bar .tab-bar-item:hover:not(.selected){           /* Hover button */
     background: var(--a-white-dark);
+}
+#friends .friends-header .tab-bar .tab-bar-item .badge{                         /* Notification Badge */
+    border-radius: 0;
+    background: var(--orange);
+    position: absolute;
+    margin-top: 32px;
+    margin-left: 4px;
+    min-width: 18px;
+    max-height: 18px;
+    padding: 3px 0;
 }
 .private-channels{
     background: none;
