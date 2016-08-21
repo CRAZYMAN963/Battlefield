@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.11"}*//{}
+//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.12"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.8.0.css);
 @font-face {
@@ -379,6 +379,7 @@ body{
 }
 img.emote{                                                                      /* Twitch/BTTV/FFz emotes */
     margin: -10px 0;
+    vertical-align: middle;
 }
 .chat .welcome-message{                                                         /* Hide welcome messages */
     display: none;
@@ -1521,21 +1522,21 @@ div.control-group .shortcut-recorder input[type=text]{                          
     opacity: 1 !important;
 }
 .tipsy-inner{
-    background: #000;
+    background: var(--black);
     font-size: 11px;
     padding: 8px;
 }
-.tooltip.tooltip-top:after{
-    border-top-color: var(--a-black-dark);
+.tooltip.tooltip-top::after{
+    border-top-color: var(--black);
 }
-.tooltip.tooltip-right:after{
-    border-right-color: var(--a-black-dark);
+.tooltip.tooltip-right::after{
+    border-right-color: var(--black);
 }
-.tooltip.tooltip-bottom:after{
-    border-bottom-color: var(--a-black-dark);
+.tooltip.tooltip-bottom::after{
+    border-bottom-color: var(--black);
 }
-.tooltip.tooltip-left:after{
-    border-left-color: var(--a-black-dark);
+.tooltip.tooltip-left::after{
+    border-left-color: var(--black);
 }
 
 /* REMOVE ART */

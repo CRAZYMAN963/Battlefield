@@ -85,4 +85,7 @@
 * Fiddle: Emote margins (again)
 
 #### 1.8.11
-* Fix: unstyled notification badge on Friends header bar
+* Fix: Unstyled notification badge on Friends header bar
+
+#### 1.8.12
+* Fix: Miscolour on tooltip arrows
