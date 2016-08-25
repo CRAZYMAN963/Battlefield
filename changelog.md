@@ -89,3 +89,11 @@
 
 #### 1.8.12
 * Fix: Miscolour on tooltip arrows
+
+#### 1.9.0
+* Pass over some un-styled elements in the friends tab
+* Private calling background
+* Fix: Avatar in the settings modal was tiling
+* Fix: Miscoloured background on guild header hover
+* Fix: Now playing text in friends table shouldn't have been bold
+* Fix: Border between friends in friends list

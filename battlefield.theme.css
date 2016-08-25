@@ -1,6 +1,6 @@
-//META{"name":"Battlefield","description":"Battlefield","author":"Tako","version":"1.8.12"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.9.0"}*//{}
 
-@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.8.0.css);
+@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.9.0.css);
 @font-face {
     font-family: 'Purista';
     src: url('https://dl.dropboxusercontent.com/u/9889565/BetterDiscord/battlefield/PuristaMedium.woff');
@@ -87,6 +87,9 @@ body{
     height: 50px;
     padding: 0 20px;
     font-family: Purista, sans-serif;
+}
+.guild-header header:hover{
+    background-color: var(--a-black-dark);
 }
 .guild-header ul{                                                               /* Server header dropdown menu */
     top: 15px;
@@ -190,6 +193,9 @@ body{
     border-radius: 0;
     right: 0;
     bottom: 0;
+}
+.account .account-details .username{
+    font-family: Purista, sans-serif;
 }
 
 /* VOICE CONNECTION */
@@ -303,12 +309,34 @@ body{
 .chat .empty-message{                                                           /* This is the beginning of message history text */
     height: 50px;
     border-color: var(--orange);
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .chat .empty-message h1{                                                        /* This is the beginning of message history text */
     color: var(--orange);
     font-family: Purista, sans-serif;
     font-size: 13px;
     font-weight: normal;
+}
+.system-message{                                                                /* System message */
+    color: var(--white);
+    font-size: 13px;
+    line-height: 28px;
+}
+.system-message-content a{                                                      /* Link in system message */
+    color: var(--white) !important;
+}
+.system-message-timestamp{                                                      /* System message timestamp */
+    color: var(--white);
+}
+.system-message-icon{                                                           /* System message icon */
+    width: 15px;
+    height: 15px;
+    background-size: 15px 15px;
+    margin-top: 5px;
+    margin-right: 10px;
 }
 .chat .messages{                                                                /* Chat */
     background: var(--a-black-light);
@@ -317,6 +345,8 @@ body{
     border-bottom: 1px solid var(--a-white-dark);
     margin-left: 0;
     margin-right: 0;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }
 .message-group.compact .message .markup .user-name{                             /* Username next to message */
     font-family: Purista, sans-serif;
@@ -621,6 +651,8 @@ img.emote{                                                                      
     background: var(--a-black-light);
     border: 1px solid var(--a-black-dark);
     border-radius: 0;
+    width: 128px;
+    height: 128px;
 }
 .radio-theme.light.compact label{                                               /* Light theme */
     background: url(https://i.imgur.com/VmPjmCb.png);
@@ -842,6 +874,33 @@ div.control-group .shortcut-recorder input[type=text]{                          
     border-radius: 0;
     height: 50px;
 }
+.private-channels .search-bar .search-bar-inner{
+    border-radius: 0;
+}
+.private-channels .channel .icon-friends{                                       /* Friends channel icon */
+    background-color: transparent;
+}
+.private-channels .channel.selected .icon-friends{                              /* Friends channel selcted */
+    background-color: var(--orange);
+}
+.private-channels .channel.selected{                                            /* Selected friend */
+    background: var(--a-white-dark);
+}
+.private-channels .channel:hover{                                               /* Hover on friends */
+    background: var(--a-white-dark);
+}
+.private-channels .channel.selected:before{                                     /* Selected indicator */
+    border-left-color: var(--orange);
+}
+.private-channels .channel .avatar-small{                                       /* Friends list avatar */
+    border-radius: 0;
+}
+.private-channels .status{                                                      /* Friends list avatar status */
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+    border: 0;
+}
 #friends{                                                                       /* List of friends */
     background: none;
 }
@@ -928,6 +987,10 @@ div.control-group .shortcut-recorder input[type=text]{                          
     padding: 0 10px;
     height: 60px !important;
 }
+#friends .friends-table .friends-row+.friends-row{                              /* Remove border between friends in list */
+    border: 0;
+    margin-top: 1px !important;
+}
 #friends .friends-table .friends-row:hover{                                     /* Friend list friend hover */
     background: var(--a-black-dark);
     box-shadow: none;
@@ -941,6 +1004,9 @@ div.control-group .shortcut-recorder input[type=text]{                          
 }
 #friends .friends-table .friends-row .friends-column-status .status-text{       /* Friend status text */
     color: var(--white);
+}
+#friends .friends-table .friends-row .friends-column-status .status-text strong{
+    font-weight: normal;
 }
 #friends .friends-table .friends-row .friends-column-actions .friends-action{   /* Call/remove buttons */
     line-height: 60px;
@@ -989,6 +1055,48 @@ div.control-group .shortcut-recorder input[type=text]{                          
 .add-friend-popout .btn:disabled{
     background: var(--a-black-light);
     color: var(--a-black-dark);
+}
+
+/* PRIVATE CALLING */
+.private-channel-call{                                                          /* Private call header */
+    background-color: var(--a-black-light);
+    background-image: none;
+    margin-bottom: 1px;
+}
+.private-channel-call .avatar-xxlarge{                                          /* Private call avatar */
+    border: 1px solid var(--black);
+    border-radius: 0;
+}
+.private-channel-call .btn-icon,
+.private-channel-call .btn-text{                                                /* Private call buttons */
+    border-radius: 0;
+}
+.private-channel-call .status-muted{
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+    border: 0;
+}
+
+/* INCOMING CALL MODAL */
+.incoming-call .incoming-call-inner{                                            /* Incoming call modal */
+    border-radius: 0;
+}
+.incoming-call .title{                                                          /* Incoming call header */
+    font-size: 13px;
+    text-transform: none;
+    opacity: 1;
+}
+.incoming-call .callers .avatar-pulse,                                          /* Incoming call avatar pulse */
+.incoming-call .callers .avatar-popout{                                         /* Incoming call avatar */
+    border-radius: 0;
+}
+.incoming-call .callers .names{                                                 /* Caller name */
+    font-family: Purista, sans-serif;
+    color: var(--orange);
+}
+.incoming-call .options .option{                                                /* Hang up/accept call buttons */
+    border-radius: 0;
 }
 
 /* NEW SERVER MODAL */
