@@ -91,9 +91,14 @@
 * Fix: Miscolour on tooltip arrows
 
 #### 1.9.0
+* Pinned message notification (Discord+20160825)
 * Pass over some un-styled elements in the friends tab
 * Private calling background
 * Fix: Avatar in the settings modal was tiling
 * Fix: Miscoloured background on guild header hover
 * Fix: Now playing text in friends table shouldn't have been bold
 * Fix: Border between friends in friends list
+
+#### 1.10.0
+* New loading animation
+* Fix: White border sppearing in settings modal when EvenBetterRepo wasn't installed

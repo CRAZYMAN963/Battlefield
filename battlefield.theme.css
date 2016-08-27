@@ -1,6 +1,6 @@
-//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.9.0"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.10.1"}*//{}
 
-@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.9.0.css);
+@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.10.0.css);
 @font-face {
     font-family: 'Purista';
     src: url('https://dl.dropboxusercontent.com/u/9889565/BetterDiscord/battlefield/PuristaMedium.woff');
@@ -40,6 +40,23 @@
     0%{ background: transparent; }
     50%{ background: var(--a-white-dark); }
     100%{ background: transparent; }
+}
+@keyframes loadersmall{                                                         /* Loading icon */
+    0% {background-position: 0 0;}
+    6% {background-position: -32px 0;}
+    14% {background-position: -64px 0;}
+    20% {background-position: -96px 0;}
+    28% {background-position: -128px 0;}
+    36% {background-position: -160px 0;}
+    42% {background-position: -192px 0;}
+    48% {background-position: -224px 0;}
+    56% {background-position: -256px 0;}
+    64% {background-position: -288px 0;}
+    70% {background-position: -320px 0;}
+    78% {background-position: -352px 0;}
+    86% {background-position: -384px 0;}
+    94% {background-position: -416px 0;}
+    100% {background-position: -448px 0;}
 }
 
 body{
@@ -542,6 +559,11 @@ img.emote{                                                                      
     background: var(--a-black-dark);
     margin-right: 1px;
     border-radius: 0;
+    border: 0;
+    box-shadow: none;
+}
+.tab-bar.SIDE{
+    margin-right: -17px;
 }
 .tab-bar.SIDE .tab-bar-item{
     color: var(--white);
@@ -1738,6 +1760,16 @@ div[style*="background:#2E3136"]>span{
 }
 #bd-changelog{
     font-weight: normal;
+}
+
+/* OTHER */
+.spinner-wandering-cubes .spinner-item{                                         /* Loading animation */
+    background-image: url(https://i.imgur.com/mzXaayq.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    animation: loadersmall 0.675s infinite step-start;
+    width: 32px;
+    height: 32px;
 }
 
 /* MONOKAI THEME FOR CSS EDITOR IN BETTERDISCORD SETTINGS */
