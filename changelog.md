@@ -106,3 +106,7 @@
 #### 1.10.1
 * Fix: Low readability on usernames when comfy mode is enabled (Issue #1)
 * Change colour of default group in members list to match chat box.
+
+#### 1.11.0
+* Notification Settings modal
+* Fix: Unread messages bar hover colour

@@ -1,6 +1,6 @@
-//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.10.1"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.11.0"}*//{}
 
-@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.10.0.css);
+@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.11.0.css);
 @font-face {
     font-family: 'Purista';
     src: url('https://dl.dropboxusercontent.com/u/9889565/BetterDiscord/battlefield/PuristaMedium.woff');
@@ -314,6 +314,9 @@ body{
     left: 0;
     right: 0;
     font-weight: normal;
+}
+.chat .new-messages-bar:hover{
+    background: var(--orange);
 }
 .chat .new-messages-bar button:first-child,                                     /* X new messages since... text */
 .chat .new-messages-bar button:last-child{                                      /* Mark as read text */
@@ -1257,7 +1260,37 @@ div.control-group .shortcut-recorder input[type=text]{                          
     background: var(--a-black-dark) !important;
 }
 
-/* 
+/* NOTIFICATION SETTINGS MODAL */
+.notification-settings-modal .notification-settings-modal-channel-settings-header{
+    padding: 5px 20px;
+    border-bottom: 1px solid var(--a-white-dark);
+}
+.notification-settings-modal .notification-settings-modal-channel-settings-header label{
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: none;
+}
+.channel-notification-settings{
+    width: auto;
+    padding: 0 20px;
+    border-bottom-color: var(--a-white-dark);
+}
+.notification-settings-modal .notification-settings-modal-channel-settings-list{/* Channels */
+    box-shadow: none;
+    padding: 0;
+}
+.channel-notification-settings .content{                                        /* Channels table */
+    height: 40px;
+}
+.channel-notification-settings .content label{                                  /* Channel name */
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--white);
+}
+.channel-notification-settings .content label:before{                           /* Hashtag */
+    color: var(--white);
+}
 
 /* VARIOUS MODALS */
 .modal .form-header{                                                            /* Header */
