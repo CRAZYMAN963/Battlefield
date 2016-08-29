@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.11.0"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.11.1"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.11.0.css);
 @font-face {
@@ -530,7 +530,7 @@ img.emote{                                                                      
     right: 0;
     bottom: 0;
 }
-.channel-mmembers .avatar-small .status.status-typing{
+.status.status-typing{
     right: 0px !important;
 }
 .channel-members .member .member-activity strong{                               /* Game/stream name */

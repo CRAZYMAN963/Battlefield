@@ -110,3 +110,6 @@
 #### 1.11.0
 * Notification Settings modal
 * Fix: Unread messages bar hover colour
+
+#### 1.11.1
+* Fix: Position on typing animation next to member avatars
