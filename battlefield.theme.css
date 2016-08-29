@@ -371,6 +371,9 @@ body{
     font-size: 13px;
     font-weight: bold;
 }
+.message-group h2 strong{														/* Username in comfy mode */
+	color: #CCC;
+}
 .message-group .mentioned .message-text{                                        /* Mentioned background */
     border-radius: 0;
 }
@@ -493,6 +496,7 @@ img.emote{                                                                      
 }
 .channel-members .member .member-username{                                      /* Usernames */
     font-family: Purista, sans-serif;
+    color: #CCC;
 }
 .channel-members .member.popout-open,
 .channel-members .member:hover{

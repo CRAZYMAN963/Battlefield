@@ -102,3 +102,7 @@
 #### 1.10.0
 * New loading animation
 * Fix: White border sppearing in settings modal when EvenBetterRepo wasn't installed
+
+#### 1.10.1
+* Fix: Low readability on usernames when comfy mode is enabled (Issue #1)
+* Change colour of default group in members list to match chat box.
