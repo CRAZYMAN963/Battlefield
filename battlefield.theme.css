@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.12.0"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.12.1"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.12.0.css);
 @font-face {
@@ -666,6 +666,10 @@ img.emote{                                                                      
 #overlay-explanation a{
     font-weight: normal;
 }
+.now-playing .game-input{
+    width: 400px;
+    border-radius: 0;
+}
 .user-settings-modal-games{                                                     /* Table of games */
     background: none;
 }
@@ -682,6 +686,8 @@ img.emote{                                                                      
     font-size: 13px;
     font-weight: normal;
     color: var(--white);
+    width: 400px;
+    border-radius: 0;
 }
 .avatar-uploader .avatar-uploader-inner{                                        /* Avatar uploader */
     background: var(--a-black-light);

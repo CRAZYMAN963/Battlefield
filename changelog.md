@@ -122,3 +122,6 @@
 
 #### 1.12.0
 * Invite button
+
+#### 1.12.1
+* Made text boxes for custom game names longer
