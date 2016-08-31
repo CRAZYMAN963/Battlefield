@@ -116,3 +116,6 @@
 
 #### 1.11.2
 * Improved some chat elements when using comfy mode
+
+#### 1.11.3
+* Improve readability in context menus

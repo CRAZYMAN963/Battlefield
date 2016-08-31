@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.11.2"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.11.3"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.11.0.css);
 @font-face {
@@ -1661,7 +1661,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
 
 /* CONTEXT MENUS */
 .context-menu{
-    background: var(--a-black-dark);
+    background: #000;
     border-radius: 0;
     box-shadow: none;
     border-color: var(--a-white-dark);
@@ -1672,8 +1672,9 @@ div.control-group .shortcut-recorder input[type=text]{                          
     line-height: 13px;
 }
 .context-menu .item:hover{
-    background: var(--a-black-dark);
+    background: var(--a-white-dark);
     color: var(--white);
+    border-radius: 0;
 }
 .context-menu .item-group{
     border: 0;
