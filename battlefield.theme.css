@@ -1,6 +1,6 @@
-//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.11.3"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.12.0"}*//{}
 
-@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.11.0.css);
+@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.12.0.css);
 @font-face {
     font-family: 'Purista';
     src: url('https://dl.dropboxusercontent.com/u/9889565/BetterDiscord/battlefield/PuristaMedium.woff');
@@ -1815,6 +1815,20 @@ div[style*="background:#2E3136"]>span{
     animation: loadersmall 0.675s infinite step-start;
     width: 32px;
     height: 32px;
+}
+.invite-button{
+    border: 0;
+    border-radius: 0;
+    background: var(--black);
+    font-family: arial, sans-serif;
+}
+.invite-button-header{
+    color: var(--white);
+    font-weight: normal;
+}
+.invite-button-body{
+    color: var(--white);
+    font-weight: normal;
 }
 
 /* MONOKAI THEME FOR CSS EDITOR IN BETTERDISCORD SETTINGS */
