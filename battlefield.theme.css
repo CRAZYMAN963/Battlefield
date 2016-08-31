@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.11.1"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. Github: https://git.io/v6bVA","author":"Tako","version":"1.11.2"}*//{}
 
 @import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.11.0.css);
 @font-face {
@@ -358,6 +358,10 @@ body{
     margin-top: 5px;
     margin-right: 10px;
 }
+.chat .avatar-large {                                                           /* Avatar in chat */
+    border-radius: 0;
+    margin-right: 10px;
+}
 .chat .messages{                                                                /* Chat */
     background: var(--a-black-light);
 }
@@ -375,7 +379,10 @@ body{
     font-weight: bold;
 }
 .message-group h2 strong{														/* Username in comfy mode */
-	color: #CCC;
+	font-family: Purista, sans-serif;
+    color: #CCC;
+    font-size: 13px;
+    font-weight: bold;
 }
 .message-group .mentioned .message-text{                                        /* Mentioned background */
     border-radius: 0;

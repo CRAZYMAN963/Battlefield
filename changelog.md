@@ -113,3 +113,6 @@
 
 #### 1.11.1
 * Fix: Position on typing animation next to member avatars
+
+#### 1.11.2
+* Improved some chat elements when using comfy mode
