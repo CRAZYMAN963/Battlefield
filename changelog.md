@@ -119,3 +119,6 @@
 
 #### 1.11.3
 * Improve readability in context menus
+
+#### 1.12.0
+* Invite button
