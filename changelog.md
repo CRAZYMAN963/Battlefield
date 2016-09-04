@@ -125,3 +125,11 @@
 
 #### 1.12.1
 * Made text boxes for custom game names longer
+
+#### 1.13.0 (Discord+20160902)
+* Partial style for Steam connect modal
+* Update style in connections settings
+* Fix: New messages/new day divider overlapping (Thanks, Uri!)
+* Fix: Loading animation was doubled up
+* Fix: Add friend button backgrounds
+* Fix: Call/Remove friend button

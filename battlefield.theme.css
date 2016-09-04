@@ -1,6 +1,5 @@
-//META{"name":"Battlefield","description":"Battlefield theme. <br><a href='https://github.com/takosthings/battlefield' target='_BLANK'>Github Repo</a>","author":"<a href='https://github.com/takosthings/battlefield' target='_BLANK'>Tako</a>","version":"1.12.1"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. <br><a href='https://github.com/takosthings/battlefield' target='_BLANK'>Github Repo</a>","author":"<a href='https://github.com/takosthings/battlefield' target='_BLANK'>Tako</a>","version":"1.13.0"}*//{}
 
-@import url(https://cdn.rawgit.com/TakosThings/battlefield/master/versions/1.12.0.css);
 @font-face {
     font-family: 'Purista';
     src: url('https://dl.dropboxusercontent.com/u/9889565/BetterDiscord/battlefield/PuristaMedium.woff');
@@ -10,6 +9,17 @@
     font-family: 'Purista';
     src: url('https://dl.dropboxusercontent.com/u/9889565/BetterDiscord/battlefield/PuristaSemibold.woff');
     font-weight: 600;
+}
+.channels-wrap:after{
+  width: 100%;
+  height: 18px;
+  background: var(--a-black-light);
+  content: "Battlefield 1.13.0";
+  color: #FFF;
+  font-size: 10px;
+  text-align: center;
+  padding-top: 6px;
+  margin-top: 1px;
 }
 
 :root{
@@ -80,7 +90,7 @@ body{
     min-height: 50px;
 }
 .chat>.title-wrap>.title{
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-size: 18px;
     letter-spacing: normal;
 }
@@ -103,7 +113,7 @@ body{
     box-shadow: none;
     height: 50px;
     padding: 0 20px;
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
 }
 .guild-header header:hover{
     background-color: var(--a-black-dark);
@@ -212,7 +222,7 @@ body{
     bottom: 0;
 }
 .account .account-details .username{
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
 }
 
 /* VOICE CONNECTION */
@@ -225,7 +235,7 @@ body{
 #voice-connection .voice-connection-status-connecting,                          /* Connecting */
 #voice-connection .voice-connection-status-error,                               /* Error */
 #voice-connection .voice-connection-status-connected{                           /* Connected */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
 }
 #voice-connection .voice-connection-channel{                                    /* Current channel */
     opacity: 1;
@@ -336,7 +346,7 @@ body{
 }
 .chat .empty-message h1{                                                        /* This is the beginning of message history text */
     color: var(--orange);
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-size: 13px;
     font-weight: normal;
 }
@@ -373,13 +383,13 @@ body{
     padding-right: 10px !important;
 }
 .message-group.compact .message .markup .user-name{                             /* Username next to message */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     color: #CCC;
     font-size: 13px;
     font-weight: bold;
 }
 .message-group h2 strong{														/* Username in comfy mode */
-	font-family: Purista, sans-serif;
+	 font-family: 'Purista', sans-serif;
     color: #CCC;
     font-size: 13px;
     font-weight: bold;
@@ -417,6 +427,12 @@ body{
     margin-left: 0;
     margin-right: 0;
 }
+.chat .divider:before{
+	display: none;
+}
+.messages-wrapper .messages .divider + .divider{								/* Provided by Uri (1.13.0)*/
+	margin-top: 25px;
+}
 .chat .divider.divider-red>div:last-of-type,                                    /* New messages right divider */
 .chat .divider>div:last-of-type{                                                /* New day right divider */
     display: none;
@@ -429,13 +445,13 @@ body{
     color: var(--orange);
     background: transparent;
     border-left:1px solid var(--orange);
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
 }
 .chat .divider>span{                                                            /* New day divider text */
     color: var(--white);
     background: transparent;
     border-left:1px solid var(--white);
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
 }
 img.emote{                                                                      /* Twitch/BTTV/FFz emotes */
     margin: -10px 0;
@@ -505,7 +521,7 @@ img.emote{                                                                      
   display: none;
 }
 .channel-members .member .member-username{                                      /* Usernames */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     color: #CCC;
 }
 .channel-members .member.popout-open,
@@ -514,7 +530,7 @@ img.emote{                                                                      
 }
 .channel-members h2{                                                            /* Group headers */
     color: var(--white);
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-size: 13px;
     font-weight: normal;
     text-transform: none;
@@ -603,7 +619,7 @@ img.emote{                                                                      
     margin-top: 1px;
 }
 .tab-bar.SIDE .tab-bar-header{                                                  /* Modal header */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     box-shadow: none;
 }
 .user-settings-streamer-mode{                                                   /* Streamer mode has a background for whatever reason... */
@@ -628,15 +644,22 @@ img.emote{                                                                      
 .settings .settings-inner .settings-panel{
     padding: 25px;
 }
+.connect-account-btn .connect-account-btn-inner{
+	border: 1px solid var(--a-white-dark);
+	border-radius: 0;
+}
+.settings-connections-wrapper .user-settings-modal-connections .user-settings-modal-connections-list{
+	box-shadow: none;
+	padding: 0 5px 10px 10px;
+}
 .settings-connections-wrapper .user-settings-modal-connections .user-settings-modal-connections-list .connection .connection-integrations.no-integrations{ /* Jesus fucking christ Discord */
     color: var(--white);
     font-weight: normal;
     font-size: 13px;
     text-transform: none;
 }
-.settings-connections-wrapper .user-settings-modal-connections .user-settings-modal-connections-list .connection .connection-integrations{ /* Jesus fucking christ Discord */
-    border: 0;
-    background: var(--a-black-light);
+.settings-connections-wrapper .user-settings-modal-connections .user-settings-modal-connections-list .connection{
+	border-radius: 0;
 }
 .settings-connections-wrapper .authed-app{                                      /* Auth'd app */
     background: var(--a-black-light);
@@ -729,7 +752,7 @@ img.emote{                                                                      
 }
 .form .control-group label{                                                     /* Group header */
     color: var(--white);
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
 }
 .form .control-group input{
     line-height: 13px;
@@ -951,7 +974,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     padding: 0;
     min-width: 90px;
     max-width: 90px;
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-size: 13px;
     font-weight: normal;
     border-radius: 0;
@@ -963,7 +986,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     background: var(--a-white-dark);
 }
 #friends .friends-header .tab-bar{                                              /* Friends tab bar */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-size: 13px;
     font-weight: normal;
     letter-spacing: normal;
@@ -980,6 +1003,12 @@ div.control-group .shortcut-recorder input[type=text]{                          
     max-height: 90px;
     border-radius: 0;
     padding: 0;
+}
+#friends .friends-header .tab-bar .tab-bar-item.tab-bar-item-primary{
+    background: transparent;
+}
+#friends .friends-header .tab-bar .tab-bar-item.tab-bar-item-primary:hover:not(.selected){
+    background: var(--a-white-dark);
 }
 #friends .friends-header .tab-bar .tab-bar-item.selected{                       /* Selected tab */
     background-color: var(--a-white-dark);
@@ -1015,7 +1044,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     width: 0;
 }
 #friends .friends-table .friends-column-name{                                   /* Friends table column header */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     color: var(--white);
 }
 #friends .friends-table .friends-table-body{                                    /* Friends table body */
@@ -1051,52 +1080,30 @@ div.control-group .shortcut-recorder input[type=text]{                          
     font-weight: normal;
 }
 #friends .friends-table .friends-row .friends-column-actions .friends-action{   /* Call/remove buttons */
-    line-height: 60px;
-    padding: 0;
-    min-width: 90px;
-    max-width: 90px;
     border-radius: 0;
-    text-align:center;
-    font-family: Purista, sans-serif;
-    font-style: 13px;
-    font-weight: normal;
-    background: none;
+    background-color: transparent;
+    width: 60px;
+    height: 100%;
 }
 #friends .friends-table .friends-row .friends-column-actions .friends-action:hover{
-    background: var(--a-white-dark);
-}
-#friends .friends-table .friends-row .friends-column-actions .friends-action.friends-action-red{
-    background: none;
+    background-color: var(--a-white-dark);
 }
 #friends .friends-table .friends-row .friends-column-actions .friends-action+div{
     margin: 0;
 }
-.add-friend-popout{                                                             /* Add friend popout */
-    background: none;
-}
-.add-friend-popout header{                                                      /* Add friend popout Header */
-    background: var(--a-black-dark);
-    font-family: Purista, sans-serif;
-    font-size: 13px;
-    font-weight: normal;
-    color: var(--orange);
-}
-.add-friend-popout section{                                                     /* Add friend popout body */
+#friends .friends-table .friend-table-add-wrapper .friend-table-add-header{
     background: var(--a-black-light);
-    border-radius: 0;
+    border: 0;
+}
+#friends .friends-table .friend-table-add-wrapper h2{
+    color: var(--white);
+    font-weight: normal;
+}
+#friends .friends-table .friend-table-add-wrapper .friend-table-add-description,
+#friends .friends-table .friend-table-add-wrapper .friend-table-add-header .connect-accounts h3{
     color: var(--white);
     font-size: 13px;
-}
-.add-friend-popout header input{                                                /* Add friend popout textbox */
-    border: 1px solid var(--white);
-    border-radius: 0;
-}
-.add-friend-popout header input:focus{                                          /* Add friend popout textbox selected */
-    border: 1px solid var(--orange);
-}
-.add-friend-popout .btn:disabled{
-    background: var(--a-black-light);
-    color: var(--a-black-dark);
+    font-weight: normal;
 }
 
 /* PRIVATE CALLING */
@@ -1134,7 +1141,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     border-radius: 0;
 }
 .incoming-call .callers .names{                                                 /* Caller name */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     color: var(--orange);
 }
 .incoming-call .options .option{                                                /* Hang up/accept call buttons */
@@ -1147,13 +1154,13 @@ div.control-group .shortcut-recorder input[type=text]{                          
     border-radius: 0;
 }
 .create-guild-container .create-or-join header{                                 /* Header */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-size: 13px;
     font-weight: normal;
 }
 .create-guild-container .action.create .action-header,
 .create-guild-container .action.join .action-header{                            /* Header */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-size: 13px;
     font-weight: normal;
 }
@@ -1206,7 +1213,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     border: 0;
 }
 .create-guild-container h5{
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-weight: normal;
     color: var(--orange);
 }
@@ -1255,7 +1262,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
 /* DELETE MESSAGE MODAL */
 .confirm-message-modal .form-inner > .message-group > .comment > .message > .body > h2 > .username-wrapper > .user-name{
     color: var(--orange);
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-size: 13px;
     font-weight: normal;
 }
@@ -1314,7 +1321,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     margin-bottom: 1px;
 }
 .modal header{                                                                  /* Header text */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-weight: normal;
     color: var(--orange);
 }
@@ -1352,7 +1359,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     border-radius: 0;
     margin-bottom: 1px;
     margin-top: 0;
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-weight: normal;
     color: var(--orange);
 }
@@ -1383,7 +1390,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
 }
 .need-help-modal .header h1{                                                    /* Header text */
     margin-top: 0;
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-weight: normal;
     text-transform: lowercase;
     color: var(--orange);
@@ -1425,6 +1432,40 @@ div.control-group .shortcut-recorder input[type=text]{                          
     color: var(--white);
 }
 
+/* STEAM CONNECT MODAL */
+.detected-platform-accounts-modal{
+	background-color: var(--a-black-light);
+}
+.detected-platform-accounts-modal .body{
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0 10px;
+}
+.detected-platform-accounts-modal .btn-group{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.detected-platform-accounts-modal .btn-group .btn-primary{
+    background: var(--a-black-light);
+    border: 1px solid var(--white);
+    border-radius: 0;
+    font-weight: normal;
+}
+.detected-platform-accounts-modal .btn-group .btn-primary:hover:not(:disabled){
+    background: var(--a-black-dark);
+}
+.detected-platform-accounts-modal .btn-group .btn-default{
+    background: var(--a-black-light);
+    border: 1px solid var(--white);
+    border-radius: 0;
+    font-weight: normal;
+    padding: 0 10px;
+}
+.detected-platform-accounts-modal .btn-group .btn-default:hover{
+    background: var(--a-black-dark);
+    border-bottom: 1px solid var(--white);
+}
+
 /* POPOUTS */
 .popout.popout-bottom-right.no-arrow,
 .popout.popout-bottom.no-arrow{
@@ -1440,7 +1481,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     border-radius: 0;
 }
 .popout .themed-popout .header .title{                                          /* Popout header */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-style: 13px;
     font-weight: normal;
     color: var(--orange);
@@ -1496,7 +1537,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
 #voice-connection-popout header{                                                /* Voice connection popup header */
     background: var(--a-black-dark);
     color: var(--orange);
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-size: 13px;
     font-weight: normal;
     border-radius: 0;
@@ -1510,7 +1551,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     font-style: 13px;
 }
 #voice-connection-popout .secured{                                              /* IP Address Secured */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-size: 13px;
     font-weight: normal;
 }
@@ -1540,7 +1581,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
 }
 .user-popout .username-wrapper .discord-tag .username{                          /* Username */
     color: var(--orange);
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-size: 13px;
     font-weight: normal;
 }
@@ -1565,7 +1606,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     background: var(--a-black-dark);
     border-top: none;
 }
-.user-popout .footer .quick-message-wrapper .input{                             /* Quick message box */
+.quick-message{                             /* Quick message box */
     border: 1px solid var(--white);
     border-radius: 0;
     background: var(--a-black-light);
@@ -1573,7 +1614,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     font-size: 13px;
     line-height: 14px;
 }
-.user-popout .footer .quick-message-wrapper .input:focus{
+.quick-message{
     border: 1px solid var(--orange);
     background: var(--a-black-dark);
 }
@@ -1590,7 +1631,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
 }
 #user-profile-modal .header .discord-tag .username{                             /* Username */
     color: var(--orange);
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     font-weight: normal;
 }
 #user-profile-modal .header .discord-tag .discriminator{                        /* Discriminator */
@@ -1598,6 +1639,9 @@ div.control-group .shortcut-recorder input[type=text]{                          
     font-size: 10px;
     font-weight: normal;
     color: var(--a-white-light);
+}
+#user-profile-modal .header .activity{                                          /* Now playing text */
+    width: 300px;
 }
 #user-profile-modal .avatar-profile{                                            /* Avatar */
     border: 1px solid var(--a-black-dark);
@@ -1609,13 +1653,13 @@ div.control-group .shortcut-recorder input[type=text]{                          
     right: 0;
     bottom: 0;
     border-top: 1px solid var(--a-black-dark);
+    border-right: 0;
+    border-bottom: 0;
     border-left: 1px solid var(--a-black-dark);
 }
-#user-profile-modal .sub-header{                                                /* Subheader */
-    background: var(--a-black-light);
-}
-#user-profile-modal .tab-bar{                                                   /* Tabs */
-    background: var(--a-black-light);
+#user-profile-modal .tab-bar-container{
+	background-color: var(--a-black-light);
+	border: 0;
 }
 #user-profile-modal .scroller{                                                  /* List of servers */
     background: var(--a-black-light);
@@ -1637,6 +1681,15 @@ div.control-group .shortcut-recorder input[type=text]{                          
 #user-profile-modal .empty .empty-icon-friends,
 #user-profile-modal .empty .empty-text{                                         /* Hide no friends in common */
     display: none;
+}
+#user-profile-modal .guilds .section .note textarea{
+    font-size: 13px;
+    padding: 10px 5px;
+    margin: 0;
+}
+#user-profile-modal .note textarea:focus{
+    background: var(--a-black-dark);
+    border: 1px solid var(--white);
 }
 #user-profile-modal footer{                                                     /* Footer */
     background: var(--a-black-light);
@@ -1745,7 +1798,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     border: 0;
 }
 .bda-slist .bda-name{                                                           /* Name of Plugin/Theme */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     color: var(--white);
 }
 .bda-slist .bda-description{                                                    /* Description of plugin/theme */
@@ -1755,7 +1808,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     min-height: 70px;
 }
 .bda-slist .checkbox:before{                                                    /* Enabled checkbox label */
-    font-family: Purista, sans-serif;
+     font-family: 'Purista', sans-serif;
     color: var(--white)
 }
 .bda-slist .bda-right .bda-plugin-reload{                                       /* Hide the reload button, since it doesn't work */
@@ -1821,6 +1874,9 @@ div[style*="background:#2E3136"]>span{
     animation: loadersmall 0.675s infinite step-start;
     width: 32px;
     height: 32px;
+}
+.spinner-wandering-cubes .spinner-item:last-child{
+    display: none;
 }
 .invite-button{
     border: 0;
