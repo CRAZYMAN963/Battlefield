@@ -133,3 +133,6 @@
 * Fix: Loading animation was doubled up
 * Fix: Add friend button backgrounds
 * Fix: Call/Remove friend button
+
+#### 1.14.0
+* Emote/Emoji picker
