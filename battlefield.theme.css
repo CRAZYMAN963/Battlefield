@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield theme. <br><a href='https://github.com/takosthings/battlefield' target='_BLANK'>Github Repo</a>","author":"<a href='https://github.com/takosthings/battlefield' target='_BLANK'>Tako</a>","version":"1.14.0"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. <br><a href='https://github.com/takosthings/battlefield' target='_BLANK'>Github Repo</a>","author":"<a href='https://github.com/takosthings/battlefield' target='_BLANK'>Tako</a>","version":"1.14.1"}*//{}
 
 @font-face {
     font-family: 'Purista';
@@ -14,7 +14,7 @@
   width: 100%;
   height: 18px;
   background: var(--a-black-light);
-  content: "Battlefield 1.14.0";
+  content: "Battlefield 1.14.1";
   color: #FFF;
   font-size: 10px;
   text-align: center;
@@ -1493,15 +1493,20 @@ div.control-group .shortcut-recorder input[type=text]{                          
     padding: 0;
 }
 .messages-popout .message-group{
-    background: var(--a-black-light);
+    background: var(--a-black-dark);
     margin: 1px 0 0 0;
     border: 0;
     border-radius: 0;
 }
 .messages-popout .channel-separator{                                            /* Channel/server header */
-    background: var(--a-black-light);
+    background: var(--a-black-dark);
     padding: 10px 0 5px 20px;
     margin: 1px 0 -1px 0;
+    border-top: 1px solid var(--a-white-dark);
+}
+.messages-popout .channel-separator .channel-name,
+.messages-popout .channel-separator .guild-name{
+	color: var(--orange);
 }
 .messages-popout .channel-separator:first-of-type{                              /* First message */
     margin-top: 0;

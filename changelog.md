@@ -136,3 +136,6 @@
 
 #### 1.14.0
 * Emote/Emoji picker
+
+#### 1.14.1
+* Adjust background colour on Recent Mentions to improve readability
