@@ -139,3 +139,6 @@
 
 #### 1.14.1
 * Adjust background colour on Recent Mentions to improve readability
+
+#### 1.14.2
+* Fix: Stacking avatars in cozy mode when editing a message
