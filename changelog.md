@@ -146,3 +146,6 @@
 #### 1.15.0
 * New server menu
 * Status changer menu
+
+#### 1.15.1
+* Fix: Status indicator in member popup

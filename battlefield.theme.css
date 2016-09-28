@@ -1586,6 +1586,12 @@ div.control-group .shortcut-recorder input[type=text]{                          
     border: 1px solid var(--a-black-dark);
     border-radius: 0;
 }
+.user-popout .avatar-wrapper .avatar-popout .status{
+    bottom: 1px;
+    right: 1px;
+    box-shadow: none;
+    border-radius: 0;
+}
 .user-popout .username-wrapper .discord-tag .username{                          /* Username */
     color: var(--orange);
      font-family: 'Purista', sans-serif;
