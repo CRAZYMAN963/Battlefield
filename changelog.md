@@ -142,3 +142,7 @@
 
 #### 1.14.2
 * Fix: Stacking avatars in cozy mode when editing a message
+
+#### 1.15.0
+* New server menu
+* Status changer menu
