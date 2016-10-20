@@ -149,3 +149,6 @@
 
 #### 1.15.1
 * Fix: Status indicator in member popup
+
+#### 1.15.2
+* Fix: Rounded edge on date divider
