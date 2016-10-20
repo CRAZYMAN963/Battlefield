@@ -161,3 +161,6 @@ Everything in this version was pointed out by den
 * Server settings emojis list
 * Server settings webhooks
 * Remove: Theme selector images
+
+#### 1.16.1
+* Fix: Channel members list changing width when scrolling

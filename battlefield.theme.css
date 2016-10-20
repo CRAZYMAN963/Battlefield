@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield theme. <br><a href='https://github.com/takosthings/battlefield' target='_BLANK'>Github Repo</a>","author":"<a href='https://github.com/takosthings/battlefield' target='_BLANK'>Tako</a>","version":"1.16.0"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. <br><a href='https://github.com/takosthings/battlefield' target='_BLANK'>Github Repo</a>","author":"<a href='https://github.com/takosthings/battlefield' target='_BLANK'>Tako</a>","version":"1.16.1"}*//{}
 
 @font-face {
     font-family: 'Purista';
@@ -14,7 +14,7 @@
   width: 100%;
   height: 18px;
   background: var(--a-black-light);
-  content: "Battlefield 1.16.0";
+  content: "Battlefield 1.16.1";
   color: #FFF;
   font-size: 10px;
   text-align: center;
@@ -543,6 +543,7 @@ img.emote{                                                                      
 .channel-members{                                                               /* Channel members list */
     background-color: var(--a-black-light);
     padding: 5px 0;
+    min-width: 240px;
 }
 .channel-members-loading{                                                       /* Hide loading background */
   display: none;
