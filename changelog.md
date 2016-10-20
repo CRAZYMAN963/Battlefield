@@ -152,3 +152,12 @@
 
 #### 1.15.2
 * Fix: Rounded edge on date divider
+
+#### 1.16.0
+Everything in this version was pointed out by den
+
+* Theme now fully supports dark mode
+* Server settings members list
+* Server settings emojis list
+* Server settings webhooks
+* Remove: Theme selector images
