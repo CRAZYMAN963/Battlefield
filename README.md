@@ -8,7 +8,7 @@ Follow [this guide](https://betterdocs.net/install_theme.html) to install the th
 You'll also need to go to Appearance settings and choose the light theme.
 
 # Preview
-![Preview](https://i.imgur.com/JqvVw5k.jpg)
+![Preview](http://i.imgur.com/7CIXUsu.png)
 
 # User Settings \(advanced\)
 You can change the background image used in the theme by editing the `background` in `.app` near the top of the CSS file. Remember to use HTTPS or else the image won't load.
