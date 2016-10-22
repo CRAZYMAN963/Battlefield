@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield theme. <br><a href='https://github.com/takosthings/battlefield' target='_BLANK'>Github Repo</a>","author":"<a href='https://github.com/takosthings/battlefield' target='_BLANK'>Tako</a>","version":"1.16.1"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. <br><a href='https://github.com/takosthings/battlefield' target='_BLANK'>Github Repo</a>","author":"<a href='https://github.com/takosthings/battlefield' target='_BLANK'>Tako</a>","version":"1.17.0"}*//{}
 
 @font-face {
     font-family: 'Purista';
@@ -14,7 +14,7 @@
   width: 100%;
   height: 18px;
   background: var(--a-black-light);
-  content: "Battlefield 1.16.1";
+  content: "Battlefield 1.17.0";
   color: #FFF;
   font-size: 10px;
   text-align: center;
@@ -923,6 +923,67 @@ img.emote{                                                                      
     border: 1px solid #FFF;
     color: #FFF;
     text-shadow: 0 0 0.5em var(--white);
+}
+.upload-modal{
+	background-color: transparent;
+	border-radius: 0;
+}
+.upload-modal .inner{
+	background-color: var(--a-black-light);
+	border: 0;
+	border-radius: 0;
+	margin: 0;
+}
+.upload-modal .inner .file .icon.image{
+	background-color: #000;
+	border: 1px solid #000;
+	border-radius: 0;
+}
+.upload-modal .inner .file .description .filename{
+	font-size: 16px;
+	font-family: 'Purista', sans-serif;
+}
+.upload-modal .inner .comment{
+	margin-left: 15px;
+}
+.upload-modal .inner .comment .label{
+	font-family: 'Purista', sans-serif;
+	font-weight: normal;
+}
+.upload-modal .inner .comment .channel-textarea{
+	margin: 15px 15px 0 0;
+	width: auto;
+}
+.upload-modal .footer{
+	background-color: var(--a-black-light);
+	margin-top: 1px;
+	border-radius: 0;
+}
+.upload-modal .footer .button{
+	border: 1px solid #FFF;
+	border-radius: 0;
+	background-color: var(--a-black-light);
+	font-weight: normal;
+	text-transform: uppercase;
+}
+.upload-modal .footer .button:hover{
+	text-shadow: 0 0 0.5em var(--white);
+}
+.upload-modal .footer .button:hover{
+	text-decoration: none;
+}
+.upload-modal .footer .button-primary{
+	border: 1px solid var(--orange);
+	border-radius: 0;
+	background-color: var(--a-black-light);
+	font-weight: normal;
+	text-transform: uppercase;
+	margin-left: 5px;
+	color: var(--orange);
+}
+.upload-modal .footer .button-primary:hover{
+	text-shadow: 0 0 0.5em var(--orange);
+	color: var(--orange);
 }
 
 /* MODAL FORMS */

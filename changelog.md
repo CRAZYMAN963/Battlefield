@@ -164,3 +164,6 @@ Everything in this version was pointed out by den
 
 #### 1.16.1
 * Fix: Channel members list changing width when scrolling
+
+#### 1.7.0
+* Upload file modal
