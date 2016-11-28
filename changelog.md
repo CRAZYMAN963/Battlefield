@@ -170,3 +170,6 @@ Everything in this version was pointed out by den
 
 #### 1.17.1
 * Fix: Add friends to DM popup text was impossible to read
+
+#### 1.17.2
+* Fix: Create group DM button was missing

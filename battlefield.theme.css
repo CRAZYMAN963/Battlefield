@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield theme. <br><a href='https://github.com/takosthings/battlefield' target='_BLANK'>Github Repo</a>","author":"<a href='https://github.com/takosthings/battlefield' target='_BLANK'>Tako</a>","version":"1.17.1"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. <br><a href='https://github.com/takosthings/battlefield' target='_BLANK'>Github Repo</a>","author":"<a href='https://github.com/takosthings/battlefield' target='_BLANK'>Tako</a>","version":"1.17.2"}*//{}
 
 @font-face {
     font-family: 'Purista';
@@ -14,7 +14,7 @@
   width: 100%;
   height: 18px;
   background: var(--a-black-light);
-  content: "Battlefield 1.17.1";
+  content: "Battlefield 1.17.2";
   color: #FFF;
   font-size: 10px;
   text-align: center;
@@ -1735,9 +1735,6 @@ div.control-group .shortcut-recorder input[type=text]{                          
     font-weight: normal;
     color: var(--orange);
 }
-.popout .themed-popout .footer{
-    display: none;
-}
 .messages-popout{
     padding: 0;
 }
@@ -1787,7 +1784,16 @@ div.control-group .shortcut-recorder input[type=text]{                          
     border-right: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
 }
-.private-channel-recipients-invite .friend .discord-tag
+.private-channel-recipients-invite .footer button{
+    background-color: transparent;
+    border: 1px solid var(--orange);
+    border-radius: 0;
+    font-family: 'Purista', sans-serif;
+}
+.private-channel-recipients-invite .footer button:hover{
+    background-color: var(--a-black-dark);
+    text-shadow: 0 0 0.5em var(--orange);
+}
 
 /* VOICE CONNECTION POP */
 #voice-connection-popout header{                                                /* Voice connection popup header */
