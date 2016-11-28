@@ -1,4 +1,4 @@
-//META{"name":"Battlefield","description":"Battlefield theme. <br><a href='https://github.com/takosthings/battlefield' target='_BLANK'>Github Repo</a>","author":"<a href='https://github.com/takosthings/battlefield' target='_BLANK'>Tako</a>","version":"1.17.0"}*//{}
+//META{"name":"Battlefield","description":"Battlefield theme. <br><a href='https://github.com/takosthings/battlefield' target='_BLANK'>Github Repo</a>","author":"<a href='https://github.com/takosthings/battlefield' target='_BLANK'>Tako</a>","version":"1.17.1"}*//{}
 
 @font-face {
     font-family: 'Purista';
@@ -14,7 +14,7 @@
   width: 100%;
   height: 18px;
   background: var(--a-black-light);
-  content: "Battlefield 1.17.0";
+  content: "Battlefield 1.17.1";
   color: #FFF;
   font-size: 10px;
   text-align: center;
@@ -777,7 +777,7 @@ img.emote{                                                                      
     background-color: transparent;
 }
 .search-bar.search-bar-light .search-bar-inner{
-    border-radius: 0;
+    border-radius: 0 !important;
     border: 1px solid #FFF;
     background-color: var(--a-black-dark);
 }
@@ -1348,6 +1348,12 @@ div.control-group .shortcut-recorder input[type=text]{                          
     font-size: 13px;
     font-weight: normal;
 }
+.private-channel-recipients-invite .friend .discord-tag{
+    color: #FFF;
+}
+.private-channel-recipients-invite .friend.selected, .private-channel-recipients-invite .friend:hover{
+    background: #000;
+}
 
 /* PRIVATE CALLING */
 .private-channel-call{                                                          /* Private call header */
@@ -1715,7 +1721,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     margin-top: 1px;
 }
 .popout .themed-popout{
-    background: var(--a-black-light);
+    background: var(--a-black-dark);
     border: 0;
     border-radius: 0;
 }
@@ -1781,6 +1787,7 @@ div.control-group .shortcut-recorder input[type=text]{                          
     border-right: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
 }
+.private-channel-recipients-invite .friend .discord-tag
 
 /* VOICE CONNECTION POP */
 #voice-connection-popout header{                                                /* Voice connection popup header */

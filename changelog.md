@@ -165,5 +165,8 @@ Everything in this version was pointed out by den
 #### 1.16.1
 * Fix: Channel members list changing width when scrolling
 
-#### 1.7.0
+#### 1.17.0
 * Upload file modal
+
+#### 1.17.1
+* Fix: Add friends to DM popup text was impossible to read
