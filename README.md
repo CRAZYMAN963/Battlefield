@@ -2,6 +2,8 @@
 A custom theme for Discord (BetterDiscord).  
 Currently: `v1.17.2`
 
+This theme is no longer being maintained and will not be updated past v1.17.2 (the latest version).
+
 # Installation
 [Download](https://raw.githubusercontent.com/TakosThings/battlefield/master/battlefield.theme.css)  
 Follow [this guide](https://betterdocs.net/install_theme.html) to install the theme  
